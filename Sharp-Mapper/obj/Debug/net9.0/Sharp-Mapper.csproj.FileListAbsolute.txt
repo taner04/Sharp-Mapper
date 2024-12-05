@@ -12,3 +12,4 @@
 /Users/taner/Desktop/Programming/cSharp/Self-Library/Sharp-Mapper/obj/Debug/net9.0/Sharp-Mapper.pdb
 /Users/taner/Desktop/Programming/cSharp/Self-Library/Sharp-Mapper/obj/Debug/net9.0/Sharp-Mapper.genruntimeconfig.cache
 /Users/taner/Desktop/Programming/cSharp/Self-Library/Sharp-Mapper/obj/Debug/net9.0/ref/Sharp-Mapper.dll
+/Users/taner/Desktop/Programming/cSharp/Self-Library/Sharp-Mapper/obj/Debug/net9.0/Sharp-Mapper.sourcelink.json
