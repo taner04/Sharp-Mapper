@@ -12,33 +12,46 @@ namespace Sharp_Mapper.Mapper
         private static Dictionary<Attribute, ErrorType> Attributes => new()
         {
             { new RequieredProperty(), ErrorType.RequieredProperty },
-            { new NotMappableProperty(), ErrorType.NotMappableProperty }
+            { new NotMappableProperty(), ErrorType.NotMappableProperty },
+            { new IgnoreProperty(), ErrorType.IgnoreProperty}
         };
         
         public static ErrorType CheckAttributes(PropertyInfo sourceProperty, PropertyInfo destinationProperty, TSource source)
         {
-            var atr = destinationProperty.GetCustomAttributes(typeof(Attribute), true);
-            if (destinationProperty != null)
+            // Get all attributes applied to the destination property
+            var attributes = sourceProperty.GetCustomAttributes(true).OfType<Attribute>().ToList();
+
+            foreach (var attribute in attributes)
             {
-                foreach (var item in Attributes)
+                // Check for NotMappableProperty
+                if (attribute is NotMappableProperty)
                 {
-                    var atrTypes = destinationProperty.GetCustomAttributes(typeof(Attribute), true);
-                    foreach (var t in atrTypes)
-                    {
-                        if (atrTypes[0].GetType() != item.Key.GetType()) continue;
-                        
-                        if(item.Key.GetType() == typeof(RequieredProperty) && sourceProperty.GetValue(source) == null)
-                        {
-                            return ErrorType.RequieredProperty;
-                        }
-                        return item.Value;
-                    }
+                    return ErrorType.NotMappableProperty;
                 }
-                return ErrorType.Success;
+
+                // Check for IgnoreProperty
+                if (attribute is IgnoreProperty)
+                {
+                    return ErrorType.IgnoreProperty;
+                }
+
+                // Check for RequieredProperty and validate value
+                if (attribute is RequieredProperty && sourceProperty.GetValue(source) == null)
+                {
+                    return ErrorType.RequieredProperty;
+                }
             }
-            return ErrorType.Unknown;
+
+            return ErrorType.Success;
         }
 
+
         public static object? SetProperty(object? value) => value ?? null;
+
+        public static object? GetAttribute(object? value)
+        {
+            var atr = value?.GetType().GetCustomAttributes(typeof(Attribute), true);
+            return atr?.Length > 0 ? atr[0] : null;
+        }
     }
 }

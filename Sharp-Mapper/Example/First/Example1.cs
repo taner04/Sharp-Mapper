@@ -7,6 +7,7 @@ public static class Example1
 {
     public static void Run()
     {
+        // Create an instance of Employee
         var employee = new Employee
         {
             Id = 1,
@@ -16,20 +17,23 @@ public static class Example1
             Phone = "123456789",
         };
 
+        // Create the mapper instance with attributes enabled
         var mapper = new MapperT<EmployeeDto, Employee>(ignoreAttributes: false);
         var mapperResponse = mapper.Map(employee);
 
+        // Handle mapper response
         if (mapperResponse.IsSuccess)
         {
             var employeeDto = mapperResponse.Value;
-            Console.WriteLine("Mapped, Employee -> EmployeeDto");
-            Console.WriteLine($"EmployeeDto: {employeeDto.Id} {employeeDto.Firstname} {employeeDto.Lastname}");
+            Console.WriteLine("Mapping successful! Employee -> EmployeeDto");
+            Console.WriteLine($"EmployeeDto: Id = {employeeDto.Id}, Firstname = {employeeDto.Firstname}, Lastname = {employeeDto.Lastname}");
         }
         else
         {
-            Console.WriteLine("Header: {0}", mapperResponse.Error.Header);
-            Console.WriteLine("Description: {0}",mapperResponse.Error.Description);
-            Console.WriteLine("Details: {0}");
+            // Print detailed error information
+            Console.WriteLine("Mapping failed!");
+            Console.WriteLine($"Error Header: {mapperResponse.Error.Header}");
+            Console.WriteLine($"Error Description: {mapperResponse.Error.Description}");
         }
     }
 }

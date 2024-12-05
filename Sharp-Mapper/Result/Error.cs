@@ -13,6 +13,9 @@ public enum ErrorType
     NotMappableProperty,
     [Description("Source Class is not mappable")]
     NotMappableClass,
+    IgnoreProperty,
+    TypeMismatch,
+    NullProperty
 }
 
 public class Error
