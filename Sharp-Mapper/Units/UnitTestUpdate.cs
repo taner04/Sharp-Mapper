@@ -1,11 +1,14 @@
-﻿using Sharp_Mapper.Mapper;
+﻿using Sharp_Mapper.Interface;
+using Sharp_Mapper.Mapper;
 using Sharp_Mapper.Units.Test_Objects;
 
 namespace Sharp_Mapper.Units
 {
-    internal class UnitTestUpdate
+    internal class UnitTestUpdate : IUnit
     {
-        public static void Run()
+        public string TestType { get; } = "Update";
+
+        public void Run()
         {
             // Arrange
             var employee = Employee.GetTestObject();
@@ -18,8 +21,6 @@ namespace Sharp_Mapper.Units
             };
 
             var mapper = new Mapper<EmployeeDto, Employee>();
-
-            // Act
             mapper.Update(employeeDto, ref employee);
 
             // Assert
@@ -30,11 +31,11 @@ namespace Sharp_Mapper.Units
                 employee.Email == employee.Email && // Email should remain unchanged
                 employee.Phone == employee.Phone)   // Phone should remain unchanged
             {
-                Console.WriteLine("Test 'Update' passed!");
+                UnitHelper.PrintSuccess(TestType);
             }
             else
             {
-                Console.WriteLine("Test 'Update' failed!");
+                UnitHelper.PrintFail(TestType);
             }
         }
     }

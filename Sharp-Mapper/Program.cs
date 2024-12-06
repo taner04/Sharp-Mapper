@@ -1,5 +1,14 @@
-﻿using Sharp_Mapper.Units;
+﻿using Sharp_Mapper.Interface;
+using Sharp_Mapper.Units;
 
-UnitTestMap.Run();
-UnitTestMapBack.Run();
-UnitTestUpdate.Run();
+var units = new List<IUnit>
+{
+    new UnitTestMap(),
+    new UnitTestMapBack(),
+    new UnitTestUpdate()
+};
+
+foreach (var unit in units)
+{
+    unit.Run();
+}

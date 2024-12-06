@@ -1,11 +1,14 @@
-﻿using Sharp_Mapper.Mapper;
+﻿using Sharp_Mapper.Interface;
+using Sharp_Mapper.Mapper;
 using Sharp_Mapper.Units.Test_Objects;
 
 namespace Sharp_Mapper.Units
 {
-    internal class UnitTestMap
+    internal class UnitTestMap : IUnit
     {
-        public static void Run()
+        public string TestType { get; } = "Map";
+
+        public void Run()
         {
             var employee = Employee.GetTestObject();
 
@@ -19,16 +22,17 @@ namespace Sharp_Mapper.Units
                     employeeDto.Firstname == employee.Firstname &&
                     employeeDto.Lastname == employee.Lastname)
                 {
-                    Console.WriteLine("Test 'Map' passed!");
+                    UnitHelper.PrintSuccess(TestType);
                 }
                 else
                 {
-                    Console.WriteLine("Test 'Map' failed!");
+                    UnitHelper.PrintFail(TestType);
                 }
             }
             else
             {
-                Console.WriteLine("Test 'Map' failed!");
+                UnitHelper.PrintError(mapperResponse);
+                UnitHelper.PrintFail(TestType);
             }
         }
     }
