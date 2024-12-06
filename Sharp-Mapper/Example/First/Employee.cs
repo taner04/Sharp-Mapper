@@ -1,17 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Sharp_Mapper.Mapper;
+namespace Sharp_Mapper.Example.First;
 
-namespace Sharp_Mapper.Example
+public class Employee
 {
-    public class Employee
-    {
-        public int Id { get; set; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
-    }
+    public int? Id { get; set; }
+    public string Firstname { get; set; }
+    public string Lastname { get; set; }
+    public string Email { get; set; }
+    public string Phone { get; set; }
 }

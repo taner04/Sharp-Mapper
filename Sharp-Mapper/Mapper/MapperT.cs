@@ -1,73 +1,150 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using Sharp_Mapper.Interface;
 using Sharp_Mapper.Result;
+using System.Reflection;
 
-namespace Sharp_Mapper.Mapper
+namespace Sharp_Mapper.Mapper;
+
+/// <summary>
+/// Provides functionality to map properties between source and destination objects.
+/// </summary>
+/// <typeparam name="TDestination">The type of the destination object.</typeparam>
+/// <typeparam name="TSource">The type of the source object.</typeparam>
+/// <param name="ignoreAttributes">Indicates whether to ignore attributes during mapping.</param>
+/// <param name="ignoreNullValues">Indicates whether to fill null values during mapping.</param>
+public class MapperT<TDestination, TSource>(bool ignoreAttributes = true, bool ignoreNullValues = true)
+    : IMapper<TDestination, TSource>
 {
-    public class MapperT<TDestination, TSource>(bool ignoreAttributes = true, bool fillNullValues = true) : IMapper<TDestination, TSource>
+    private static readonly MapperExtension<TDestination, TSource> MapperExtension = new();
+
+    // Cache destination properties by name for quick lookup
+    private static readonly Dictionary<string, PropertyInfo> DestinationProperties = typeof(TDestination)
+        .GetProperties()
+        .ToDictionary(p => p.Name, p => p);
+
+    private static readonly Dictionary<string, PropertyInfo> SourceProperties = typeof(TSource)
+        .GetProperties()
+        .ToDictionary(p => p.Name, p => p);
+
+    // Cache source properties
+    private static readonly PropertyInfo[] DestinationPropertyInfos = typeof(TDestination).GetProperties();
+    private static readonly PropertyInfo[] SourcePropertiesInfo = typeof(TSource).GetProperties();
+
+    private bool IgnoreNullValues { get; set; } = ignoreNullValues;
+    private bool IgnoreAttributes { get; set; } = ignoreAttributes;
+
+    /// <summary>
+    /// Maps properties from the source object to a new instance of the destination object.
+    /// </summary>
+    /// <param name="mapperObject">The source object.</param>
+    /// <returns>A result containing the mapped destination object or an error.</returns>
+    public ResultT<TDestination> Map(TSource mappableObject)
     {
-        private bool FillNullValues { get; set; } = fillNullValues;
-        private bool IgnoreAttributes { get; set; } = ignoreAttributes;
+        var destionationObject = Activator.CreateInstance<TDestination>();
 
-        // Cache destination properties by name for quick lookup
-        private static readonly Dictionary<string, PropertyInfo> _destinationProperties = typeof(TDestination)
-            .GetProperties()
-            .ToDictionary(p => p.Name, p => p);
-
-        // Cache source properties
-        private static readonly PropertyInfo[] _sourceProperties = typeof(TSource).GetProperties();
-
-        public void EnableIgnoreAttributes() => IgnoreAttributes = true;
-
-        public void DisableIgnoreAttributes() => IgnoreAttributes = false;
-
-        public ResultT<TDestination> Map(TSource source)
+        foreach (var destProp in DestinationPropertyInfos)
         {
-            var destination = Activator.CreateInstance<TDestination>();
+            SourceProperties.TryGetValue(destProp.Name, out var sourceProp);
+            var sourceValue = sourceProp.GetValue(mappableObject);
+            var propertyAtr = destProp.GetCustomAttributes().ToList();
 
-            foreach (var sourceProp in _sourceProperties)
+            var containsCombineAtr = MapperExtension.ContainsCombineAttribute(propertyAtr, out var combiner);
+
+            if (!containsCombineAtr)
             {
-                if (_destinationProperties.TryGetValue(sourceProp.Name, out var destinProp))
+                var containsValidationAtr= MapperExtension.ContainsValidationAttribute(propertyAtr, out var validator);
+                if (!containsValidationAtr)
                 {
-                    var error = SetDestinationPropertyValue(sourceProp, destinProp, destination, source);
+                    var error = SetPropertyValue(destProp, sourceValue, destionationObject);
                     if (error != ErrorType.Success)
+                        return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
+                }
+                else
+                {
+                    if (validator.IsValid(sourceValue))
                     {
-                        return ResultT<TDestination>.Failure(
-                            Error.Create($"Failed to map {sourceProp.Name}", error)
-                        );
+                        var error = SetPropertyValue(destProp, sourceValue, destionationObject);
+                        if (error != ErrorType.Success)
+                            return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
+
+                    }
+                    else
+                    {
+                        return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, validator.ErrorType), validator.ErrorType));
                     }
                 }
             }
-
-            return ResultT<TDestination>.Success(destination);
-        }
-
-        private ErrorType SetDestinationPropertyValue(PropertyInfo sourceProp, PropertyInfo destinProp, TDestination destination, TSource source)
-        {
-            // Check for type compatibility
-            if (!destinProp.PropertyType.IsAssignableFrom(sourceProp.PropertyType))
-                return ErrorType.TypeMismatch;
-
-            var sourceValue = sourceProp.GetValue(source);
-
-            // Handle null values if FillNullValues is true
-            if (!FillNullValues && sourceValue == null)
-                return ErrorType.NullProperty;
-
-            // Check for attributes if IgnoreAttributes is false
-            if (!IgnoreAttributes)
+            else
             {
-                var error = MapperExtension<TSource>.CheckAttributes(sourceProp, destinProp, source);
-                if (error != ErrorType.Success)
-                    return error;
+                combiner.Combine(sourceValue);
             }
+        }
+        return ResultT<TDestination>.Success(destionationObject);
+    }
 
-            // Set the property value
-            destinProp.SetValue(destination, MapperExtension<TSource>.SetProperty(sourceValue));
+    public ResultT<TSource> MapBack(TDestination mappableObject)
+    {
+        var destionationObject = Activator.CreateInstance<TSource>();
+
+        foreach (var sourceProp in SourcePropertiesInfo)
+        {
+            if (DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
+            {
+                var error = SetPropertyValue(sourceProp, destProp.GetValue(mappableObject), destionationObject);
+                if (error != ErrorType.Success)
+                {
+                    return ResultT<TSource>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, sourceProp, error), error));
+                }
+            }
+        }
+        return ResultT<TSource>.Success(destionationObject);
+    }
+
+    /// <summary>
+    /// Enables ignoring attributes during mapping.
+    /// </summary>
+    public void EnableIgnoreAttributes()
+    {
+        IgnoreAttributes = true;
+    }
+
+    /// <summary>
+    /// Disables ignoring attributes during mapping.
+    /// </summary>
+    public void DisableIgnoreAttributes()
+    {
+        IgnoreAttributes = false;
+    }
+
+    /// <summary>
+    /// Enables filling null values during mapping.
+    /// </summary>
+    public void EnableFillNullValues()
+    {
+        IgnoreNullValues = true;
+    }
+
+    /// <summary>
+    /// Disables filling null values during mapping.
+    /// </summary>
+    public void DisableFillNullValues()
+    {
+        IgnoreNullValues = false;
+    }
+
+    private ErrorType SetPropertyValue<T>(PropertyInfo property, object? sourceValue, T destinationObject)
+    {
+        try
+        {
+            if (!IgnoreNullValues && sourceValue == null)
+            {
+                return ErrorType.NullProperty;
+            }
+            property.SetValue(destinationObject, sourceValue);
             return ErrorType.Success;
+        }
+        catch (Exception)
+        {
+            return ErrorType.Unknown;
         }
     }
 }

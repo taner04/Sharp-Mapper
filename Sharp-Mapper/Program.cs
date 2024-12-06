@@ -1,3 +1,3 @@
-﻿using Sharp_Mapper.Example;
+﻿using Sharp_Mapper.Example.First;
 
 Example1.Run();

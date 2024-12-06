@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Sharp_Mapper.Mapper;
+using Sharp_Mapper.Mapper.Validation_Attributes;
 
-namespace Sharp_Mapper.First
+namespace Sharp_Mapper.Example.First;
+
+public class EmployeeDto
 {
-    public class EmployeeDto
-    {
-        public int Id { get; set; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-    }
+    //[MapperCombineString("Firstname", "Lastname")]
+    //public string Fullname { get; set; }
+    [MapperRequieredProperty]
+    public int Id { get; set; }
+    public string Firstname { get; set; }
+    public string Lastname { get; set; }
 }
