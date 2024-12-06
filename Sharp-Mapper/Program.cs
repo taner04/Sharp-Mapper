@@ -1,3 +1,5 @@
-﻿using Sharp_Mapper.Example.First;
+﻿using Sharp_Mapper.Units;
 
-Example1.Run();
+UnitTestMap.Run();
+UnitTestMapBack.Run();
+UnitTestUpdate.Run();

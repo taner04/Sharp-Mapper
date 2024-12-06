@@ -8,9 +8,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Example\Update\" />
-    <Folder Include="Mapper\Partial\" />
-  </ItemGroup>
-
 </Project>

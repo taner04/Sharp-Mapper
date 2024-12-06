@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Projects\\Self-Library\\Sharp-Mapper\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\unittestupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\unittestupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\unittestmapback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\unittestmapback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\unittestmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\unittestmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\test_objects\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\test_objects\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\mappercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\mappercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,10 +43,6 @@
       "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:interface\\ivalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\example\\basic\\example1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:example\\basic\\example1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\interface\\icombiner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:interface\\icombiner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -43,24 +59,12 @@
       "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\combine_attributes\\mappercombinenumbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\example\\basic\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:example\\basic\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\example\\basic\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:example\\basic\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\validation_attributes\\mapperrequieredproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\validation_attributes\\mapperrequieredproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\validation_attributes\\mappingnullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\validation_attributes\\mappingnullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,20 +82,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MapperCombineNumbers.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
-              "RelativeDocumentMoniker": "Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
-              "RelativeToolTip": "Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UnitTestMapBack.cs",
+              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\UnitTestMapBack.cs",
+              "RelativeDocumentMoniker": "Units\\UnitTestMapBack.cs",
+              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\UnitTestMapBack.cs",
+              "RelativeToolTip": "Units\\UnitTestMapBack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:56:43.548Z",
+              "WhenOpened": "2024-12-06T15:23:33.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "UnitTestUpdate.cs",
+              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\UnitTestUpdate.cs",
+              "RelativeDocumentMoniker": "Units\\UnitTestUpdate.cs",
+              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\UnitTestUpdate.cs",
+              "RelativeToolTip": "Units\\UnitTestUpdate.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T15:16:07.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Update.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Mapper_Partials\\Update.cs",
               "RelativeDocumentMoniker": "Mapper\\Mapper_Partials\\Update.cs",
@@ -99,51 +116,24 @@
               "RelativeToolTip": "Mapper\\Mapper_Partials\\Update.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAYwCwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:56:09.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:56:09.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "EmployeeDto.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Example\\Basic\\EmployeeDto.cs",
-              "RelativeDocumentMoniker": "Example\\Basic\\EmployeeDto.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Example\\Basic\\EmployeeDto.cs",
-              "RelativeToolTip": "Example\\Basic\\EmployeeDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwUAAAAqAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\EmployeeDto.cs",
+              "RelativeDocumentMoniker": "Units\\Test_Objects\\EmployeeDto.cs",
+              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\EmployeeDto.cs",
+              "RelativeToolTip": "Units\\Test_Objects\\EmployeeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T14:25:32.465Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Example\\Basic\\Employee.cs",
-              "RelativeDocumentMoniker": "Example\\Basic\\Employee.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Example\\Basic\\Employee.cs",
-              "RelativeToolTip": "Example\\Basic\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:25:31.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Example1.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Example\\Basic\\Example1.cs",
-              "RelativeDocumentMoniker": "Example\\Basic\\Example1.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Example\\Basic\\Example1.cs",
-              "RelativeToolTip": "Example\\Basic\\Example1.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAA2wDcAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:23:33.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "IMapper.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\IMapper.cs",
               "RelativeDocumentMoniker": "Interface\\IMapper.cs",
@@ -151,12 +141,11 @@
               "RelativeToolTip": "Interface\\IMapper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:07:19.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:07:19.508Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "MapperRequieredProperty.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Validation_Attributes\\MapperRequieredProperty.cs",
               "RelativeDocumentMoniker": "Mapper\\Validation_Attributes\\MapperRequieredProperty.cs",
@@ -164,12 +153,11 @@
               "RelativeToolTip": "Mapper\\Validation_Attributes\\MapperRequieredProperty.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:04:47.02Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:04:47.02Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "MapperController.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\MapperController.cs",
               "RelativeDocumentMoniker": "Mapper\\MapperController.cs",
@@ -182,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "IValidation.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\IValidation.cs",
               "RelativeDocumentMoniker": "Interface\\IValidation.cs",
@@ -190,12 +178,49 @@
               "RelativeToolTip": "Interface\\IValidation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T15:10:41.283Z",
+              "WhenOpened": "2024-12-06T15:10:41.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UnitTestMap.cs",
+              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\UnitTestMap.cs",
+              "RelativeDocumentMoniker": "Units\\UnitTestMap.cs",
+              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\UnitTestMap.cs",
+              "RelativeToolTip": "Units\\UnitTestMap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T15:20:08.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T13:48:53.932Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "MapperCombineNumbers.cs",
+              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
+              "RelativeDocumentMoniker": "Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
+              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
+              "RelativeToolTip": "Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T14:56:43.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "MappingNullable.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Validation_Attributes\\MappingNullable.cs",
               "RelativeDocumentMoniker": "Mapper\\Validation_Attributes\\MappingNullable.cs",
@@ -203,12 +228,11 @@
               "RelativeToolTip": "Mapper\\Validation_Attributes\\MappingNullable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvxUAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:04:40.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:04:40.6Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "MapperExtension.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\MapperExtension.cs",
               "RelativeDocumentMoniker": "Mapper\\MapperExtension.cs",
@@ -216,12 +240,11 @@
               "RelativeToolTip": "Mapper\\MapperExtension.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T13:58:43.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T13:58:43.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "MapperCombineString.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Combine_Attributes\\MapperCombineString.cs",
               "RelativeDocumentMoniker": "Mapper\\Combine_Attributes\\MapperCombineString.cs",
@@ -229,12 +252,11 @@
               "RelativeToolTip": "Mapper\\Combine_Attributes\\MapperCombineString.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:56:50.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:56:50.201Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "ICombiner.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\ICombiner.cs",
               "RelativeDocumentMoniker": "Interface\\ICombiner.cs",
@@ -242,12 +264,11 @@
               "RelativeToolTip": "Interface\\ICombiner.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:57:01.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:57:01.324Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "MapperIgnoreProperty.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Validation_Attributes\\MapperIgnoreProperty.cs",
               "RelativeDocumentMoniker": "Mapper\\Validation_Attributes\\MapperIgnoreProperty.cs",
@@ -255,21 +276,7 @@
               "RelativeToolTip": "Mapper\\Validation_Attributes\\MapperIgnoreProperty.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T14:04:31.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T13:48:53.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T14:04:31.442Z"
             }
           ]
         }
