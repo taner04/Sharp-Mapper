@@ -8,31 +8,24 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\TanerGadomski\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/taner/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Sharp-Mapper.csproj",
+      "projectUniqueName": "/Users/taner/Desktop/Programming/cSharp/Self-Library/Sharp-Mapper/Sharp-Mapper.csproj",
       "projectName": "Sharp-Mapper",
-      "projectPath": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Sharp-Mapper.csproj",
-      "packagesPath": "C:\\Users\\TanerGadomski\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Self-Library\\Sharp-Mapper\\obj\\",
+      "projectPath": "/Users/taner/Desktop/Programming/cSharp/Self-Library/Sharp-Mapper/Sharp-Mapper.csproj",
+      "packagesPath": "/Users/taner/.nuget/packages/",
+      "outputPath": "/Users/taner/Desktop/Programming/cSharp/Self-Library/Sharp-Mapper/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\TanerGadomski\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/taner/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -72,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

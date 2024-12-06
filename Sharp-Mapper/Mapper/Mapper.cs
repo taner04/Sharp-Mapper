@@ -1,6 +1,6 @@
+using System.Reflection;
 using Sharp_Mapper.Interface;
 using Sharp_Mapper.Result;
-using System.Reflection;
 
 namespace Sharp_Mapper.Mapper;
 
@@ -11,8 +11,12 @@ namespace Sharp_Mapper.Mapper;
 /// <typeparam name="TSource">The type of the source object.</typeparam>
 /// <param name="ignoreAttributes">Indicates whether to ignore attributes during mapping.</param>
 /// <param name="ignoreNullValues">Indicates whether to fill null values during mapping.</param>
-public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes = true, bool ignoreNullValues = true)
-    : MapperController<TDestination, TSource>(ignoreAttributes, ignoreNullValues), IMapper<TDestination, TSource>
+public sealed partial class Mapper<TDestination, TSource>(
+    bool ignoreAttributes = true,
+    bool ignoreNullValues = true
+)
+    : MapperController<TDestination, TSource>(ignoreAttributes, ignoreNullValues),
+        IMapper<TDestination, TSource>
 {
     /// <summary>
     /// Maps properties from the source object to a new instance of the destination object.
@@ -26,19 +30,28 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
         foreach (var destProp in DestinationPropertyInfos)
         {
             SourceProperties.TryGetValue(destProp.Name, out var sourceProp);
-            var sourceValue = sourceProp.GetValue(mappableObject);
+            var sourceValue = sourceProp?.GetValue(mappableObject);
             var propertyAtr = destProp.GetCustomAttributes().ToList();
 
-            var containsCombineAtr = MapperExtension.ContainsCombineAttribute(propertyAtr, out var combiner) && IgnoreAttributes == false;
+            var containsCombineAtr =
+                MapperExtension.ContainsCombineAttribute(propertyAtr, out var combiner)
+                && IgnoreAttributes == false;
 
             if (!containsCombineAtr)
             {
-                var containsValidationAtr= MapperExtension.ContainsValidationAttribute(propertyAtr, out var validator) && IgnoreAttributes == false;
+                var containsValidationAtr =
+                    MapperExtension.ContainsValidationAttribute(propertyAtr, out var validator)
+                    && IgnoreAttributes == false;
                 if (!containsValidationAtr)
                 {
                     var error = SetPropertyValue(destProp, sourceValue, destionationObject);
                     if (error != ErrorType.Success)
-                        return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
+                        return ResultT<TDestination>.Failure(
+                            Error.Create(
+                                ErrorExtension.GetDescription(sourceProp, destProp, error),
+                                error
+                            )
+                        );
                 }
                 else
                 {
@@ -46,12 +59,25 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
                     {
                         var error = SetPropertyValue(destProp, sourceValue, destionationObject);
                         if (error != ErrorType.Success)
-                            return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
-
+                            return ResultT<TDestination>.Failure(
+                                Error.Create(
+                                    ErrorExtension.GetDescription(sourceProp, destProp, error),
+                                    error
+                                )
+                            );
                     }
                     else
                     {
-                        return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, validator.ErrorType), validator.ErrorType));
+                        return ResultT<TDestination>.Failure(
+                            Error.Create(
+                                ErrorExtension.GetDescription(
+                                    sourceProp,
+                                    destProp,
+                                    validator.ErrorType
+                                ),
+                                validator.ErrorType
+                            )
+                        );
                     }
                 }
             }
@@ -71,17 +97,30 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
         {
             if (DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
             {
-                var error = SetPropertyValue(sourceProp, destProp.GetValue(mappableObject), destionationObject);
+                var error = SetPropertyValue(
+                    sourceProp,
+                    destProp.GetValue(mappableObject),
+                    destionationObject
+                );
                 if (error != ErrorType.Success)
                 {
-                    return ResultT<TSource>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, sourceProp, error), error));
+                    return ResultT<TSource>.Failure(
+                        Error.Create(
+                            ErrorExtension.GetDescription(sourceProp, sourceProp, error),
+                            error
+                        )
+                    );
                 }
             }
         }
         return ResultT<TSource>.Success(destionationObject);
     }
 
-    private ErrorType SetPropertyValue<T>(PropertyInfo property, object? sourceValue, T destinationObject)
+    private ErrorType SetPropertyValue<T>(
+        PropertyInfo property,
+        object? sourceValue,
+        T destinationObject
+    )
     {
         try
         {
