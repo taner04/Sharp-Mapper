@@ -1,7 +1,24 @@
-﻿namespace Sharp_Mapper.Mapper.Validation_Attributes
+﻿using Sharp_Mapper.Interface;
+using Sharp_Mapper.Result;
+
+namespace Sharp_Mapper.Mapper.Validation_Attributes
 {
+    /// <summary>
+    /// Attribute to indicate that a property can be nullable.
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
-    internal class MappingNullable : Attribute
+    internal class MappingNullable : Attribute, IValidation
     {
+        /// <summary>
+        /// Gets or sets the type of error that occurred.
+        /// </summary>
+        public ErrorType ErrorType { get; set; }
+
+        /// <summary>
+        /// Validates whether the source object is not null.
+        /// </summary>
+        /// <param name="source">The source object to validate.</param>
+        /// <returns>True if the source object is not null; otherwise, false.</returns>
+        public bool IsValid(object? source) => source != null || source != null;
     }
 }

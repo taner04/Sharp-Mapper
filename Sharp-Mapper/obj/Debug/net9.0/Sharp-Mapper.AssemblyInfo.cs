@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sharp-Mapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+730631ad8aafe1ff7f9dd20d6be1fdc863dae1ce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13e40a9617007d385fd41e65d9a2899773982721")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sharp-Mapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sharp-Mapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -30,14 +30,27 @@ public static class ErrorExtension
     /// <returns>A string describing the error.</returns>
     public static string GetDescription(PropertyInfo sourceProp, PropertyInfo destinProp, ErrorType errorType)
     {
-        if (errorType != ErrorType.Unknown)
-        {
-            var sb = new StringBuilder();
-            sb.Append($"Map from {sourceProp.Name} to {destinProp.Name}");
+        if (errorType == ErrorType.Unknown)
+            return "Unknown Error";
 
-            return sb.ToString();
-        }
+        var sb = new StringBuilder();
+        sb.Append($"Couldn't map from prop. {sourceProp?.Name} ({GetPropertyText(sourceProp)}) to ");
+        sb.Append($"prop. {destinProp?.Name} ({GetPropertyText(destinProp)})");
+        return sb.ToString();
+    }
 
-        return "Unknow Error";
+    /// <summary>
+    /// Gets the text representation of the specified property.
+    /// </summary>
+    /// <param name="propertyInfo">The property information.</param>
+    /// <returns>A string representing the property.</returns>
+    private static string GetPropertyText(PropertyInfo? propertyInfo)
+    {
+        var propertyClassName = propertyInfo?.DeclaringType?.Name ?? "Unknown class";
+        var propertyPropertyType = propertyInfo?.PropertyType;
+        var propertyTypeName = propertyPropertyType?.Name ?? "Unknown type";
+        var isNullable = Nullable.GetUnderlyingType(propertyPropertyType) != null;
+
+        return $"{propertyClassName}, {propertyTypeName}{(isNullable ? " (nullable)" : "")}";
     }
 }
