@@ -11,7 +11,7 @@ public static class Example1
         // Create an instance of Employee
         var employee = new Employee
         {
-            Id = null,
+            Id = 1,
             Firstname = "John",
             Lastname = "Doe",
             Email = "johndoe@mail.de",
@@ -19,7 +19,7 @@ public static class Example1
         };
 
         // Create the mapper instance with attributes enabled
-        var mapper = new MapperT<EmployeeDto, Employee>(false, false);
+        var mapper = new Mapper<EmployeeDto, Employee>();
         var mapperResponse = mapper.Map(employee);
 
         // Handle mapper response
@@ -53,12 +53,12 @@ public static class Example1
         if (mapperResponseBack.IsSuccess)
         {
             var emp = mapperResponseBack.Value;
-            Console.WriteLine("Mapping successful! Employee -> EmployeeDto");
+            Console.WriteLine("Mapping successful! EmployeeDto -> Employee");
             Console.WriteLine($"Id: {emp.Id}");
             Console.WriteLine($"Firstname: {emp.Firstname}");
             Console.WriteLine($"Lastname: {emp.Lastname}");
             Console.WriteLine($"Email: {emp.Email}");
-            Console.WriteLine($"Email: {emp.Phone}");
+            Console.WriteLine($"Phone: {emp.Phone}");
         }
         else
         {
@@ -67,5 +67,16 @@ public static class Example1
             Console.WriteLine($"Error Type: {mapperResponseBack?.Error?.Type}");
             Console.WriteLine($"Error Description: {mapperResponseBack?.Error?.Description}");
         }
+
+        Console.WriteLine();
+
+        mapper.Update(employeeDto2, ref employee);
+
+        Console.WriteLine("Updated Employee");
+        Console.WriteLine($"Id: {employee.Id}");
+        Console.WriteLine($"Firstname: {employee.Firstname}");
+        Console.WriteLine($"Lastname: {employee.Lastname}");
+        Console.WriteLine($"Email: {employee.Email}");
+        Console.WriteLine($"Phone: {employee.Phone}");
     }
 }

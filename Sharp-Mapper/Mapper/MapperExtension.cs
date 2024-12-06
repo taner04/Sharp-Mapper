@@ -53,28 +53,8 @@ public class MapperExtension<TDestination, TSource>
                 }
             }
         }
+
         validator = null!;
         return false;
-    }
-
-    /// <summary>
-    /// Sets the property value.
-    /// </summary>
-    /// <param name="value">The value to set.</param>
-    /// <returns>The set value or null.</returns>
-    public object? SetProperty(object? value)
-    {
-        return value ?? null;
-    }
-
-    /// <summary>
-    /// Gets the first attribute of the specified value.
-    /// </summary>
-    /// <param name="value">The value to get the attribute from.</param>
-    /// <returns>The first attribute or null if no attributes are found.</returns>
-    public object? GetAttribute(object? value)
-    {
-        var atr = value?.GetType().GetCustomAttributes(typeof(Attribute), true);
-        return atr?.Length > 0 ? atr[0] : null;
     }
 }

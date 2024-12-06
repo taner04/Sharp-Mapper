@@ -22,4 +22,12 @@ public interface IMapper<TDestination, TSource>
     /// <param name="destination">The destination instance to map from.</param>
     /// <returns>A <see cref="ResultT{TSource}"/> containing the mapped instance or an error.</returns>
     ResultT<TSource> MapBack(TDestination destination);
+
+    /// <summary>
+    /// Updates an instance of <typeparamref name="TSource"/> with values from <typeparamref name="TDestination"/>.
+    /// </summary>
+    /// <param name="source">The source instance to update.</param>
+    /// <param name="destination">The destination instance to update from.</param>
+    /// <returns>A <see cref="ResultT{TSource}"/> containing the updated instance or an error.</returns>
+    public void Update<TType>(object source, ref TType destination);
 }
