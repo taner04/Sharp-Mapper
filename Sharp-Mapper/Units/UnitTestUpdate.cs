@@ -10,15 +10,8 @@ namespace Sharp_Mapper.Units
 
         public void Run()
         {
-            // Arrange
             var employee = Employee.GetTestObject();
-
-            var employeeDto = new EmployeeDto
-            {
-                Id = 2,
-                Firstname = "Jane",
-                Lastname = "Doe"
-            };
+            var employeeDto = EmployeeDto.GetTestObject();
 
             var mapper = new Mapper<EmployeeDto, Employee>();
             mapper.Update(employeeDto, ref employee);
