@@ -18,8 +18,11 @@ namespace Sharp_Mapper.Mapper.Costum_Attributes
         /// <returns>The combined value of the specified properties, or the default value if the properties are not found or null.</returns>
         public object Combine(object[]? source)
         {
-            if (source != null && (source[0].Equals(null) || source[1].Equals(null)))
-            {
+            var type = source.GetType();
+            var prop1 = type.GetProperty(_value1?.ToString() ?? string.Empty);
+            var prop2 = type.GetProperty(_value2?.ToString() ?? string.Empty);
+
+            if (prop1 == null || prop2 == null)
                 return default!;
             }
             return (dynamic)source[0] + (dynamic)source[1];

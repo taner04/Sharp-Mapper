@@ -18,9 +18,11 @@ namespace Sharp_Mapper.Units
             if (mapperResponse.IsSuccess)
             {
                 var employeeDto = mapperResponse.Value;
-                if (employeeDto.Id == employee.Id &&
-                    employeeDto.Firstname == employee.Firstname &&
-                    employeeDto.Lastname == employee.Lastname)
+                if (
+                    employeeDto.Id == employee.Id
+                    && employeeDto.Firstname == employee.Firstname
+                    && employeeDto.Lastname == employee.Lastname
+                )
                 {
                     UnitHelper.PrintSuccess(TestType);
                 }
