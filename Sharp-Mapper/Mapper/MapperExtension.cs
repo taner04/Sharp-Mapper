@@ -1,9 +1,9 @@
-using System.Reflection;
 using Sharp_Mapper.Interface;
 using Sharp_Mapper.Mapper.Costum_Attributes;
 using Sharp_Mapper.Mapper.Subtract_Attributes;
 using Sharp_Mapper.Mapper.Validation_Attributes;
 using Sharp_Mapper.Result;
+using System.Reflection;
 
 namespace Sharp_Mapper.Mapper;
 
@@ -20,6 +20,7 @@ public class MapperExtension<TDestination, TSource>
     public bool ContainsCombineAttribute(List<Attribute>? attributes, out ICombiner combiner)
     {
         if (attributes != null)
+        {
             foreach (var attribute in attributes)
             {
                 if (attribute.GetType() == typeof(MapperCombineString))
@@ -34,6 +35,7 @@ public class MapperExtension<TDestination, TSource>
                     return true;
                 }
             }
+        }
 
         combiner = null!;
         return false;
@@ -42,12 +44,16 @@ public class MapperExtension<TDestination, TSource>
     public bool ContainsSubtractAttribute(List<Attribute>? attributes, out ISubtract combiner)
     {
         if (attributes != null)
+        {
             foreach (var attribute in attributes)
+            {
                 if (attribute.GetType() == typeof(MapperSubtract))
                 {
                     combiner = (ISubtract)attribute;
                     return true;
                 }
+            }
+        }
 
         combiner = null!;
         return false;
@@ -56,13 +62,17 @@ public class MapperExtension<TDestination, TSource>
     public bool ContainsValidationAttribute(List<Attribute>? attributes, out IValidation validator)
     {
         if (attributes != null)
+        {
             foreach (var attribute in attributes)
+            {
                 if (attribute.GetType() == typeof(MapperRequieredProperty))
                 {
                     validator = (IValidation)attribute;
                     validator.ErrorType = ErrorType.RequieredProperty;
                     return true;
                 }
+            }
+        }
 
         validator = null!;
         return false;

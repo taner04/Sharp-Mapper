@@ -24,6 +24,7 @@ public sealed partial class Mapper<TDestination, TSource>
     private void UpdateSource<T>(object source, ref T destination)
     {
         foreach (var sourceProp in SourcePropertiesInfo)
+        {
             if (DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
             {
                 var type = source?.GetType().GetProperty(destProp.Name);
@@ -40,11 +41,13 @@ public sealed partial class Mapper<TDestination, TSource>
                     throw new Exception(ErrorExtension.GetDescription(sourceProp, destProp, error));
                 }
             }
+        }
     }
 
     private void UpdateDestination<T>(object source, ref T destination)
     {
         foreach (var destinProp in DestinationPropertyInfos)
+        {
             if (SourceProperties.TryGetValue(destinProp.Name, out var soureProp))
             {
                 var type = source?.GetType().GetProperty(soureProp.Name);
@@ -61,5 +64,6 @@ public sealed partial class Mapper<TDestination, TSource>
                     throw new Exception(ErrorExtension.GetDescription(destinProp, soureProp, error));
                 }
             }
+        }
     }
 }

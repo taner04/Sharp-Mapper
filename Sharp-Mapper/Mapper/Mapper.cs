@@ -1,6 +1,6 @@
-using System.Reflection;
 using Sharp_Mapper.Interface;
 using Sharp_Mapper.Result;
+using System.Reflection;
 
 namespace Sharp_Mapper.Mapper;
 
@@ -38,12 +38,15 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
                 var containsValidationAtr =
                     MapperExtension.ContainsValidationAttribute(propertyAtr, out var validator) &&
                     IgnoreAttributes == false;
+
                 if (!containsValidationAtr)
                 {
                     error = SetPropertyValue(destProp, sourceValue, destionationObject);
                     if (error != ErrorType.Success)
+                    {
                         return ResultT<TDestination>.Failure(
                             Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
+                    }
                 }
                 else
                 {
@@ -51,8 +54,10 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
                     {
                         error = SetPropertyValue(destProp, sourceValue, destionationObject);
                         if (error != ErrorType.Success)
+                        {
                             return ResultT<TDestination>.Failure(
                                 Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
+                        }
                     }
                     else
                     {
@@ -72,8 +77,10 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
 
                 error = SetPropertyValue(destProp, value, destionationObject);
                 if (error != ErrorType.Success)
+                {
                     return ResultT<TDestination>.Failure(
                         Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
+                }
             }
         }
 
@@ -85,13 +92,17 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
         var destionationObject = Activator.CreateInstance<TSource>();
 
         foreach (var sourceProp in SourcePropertiesInfo)
+        {
             if (DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
             {
                 var error = SetPropertyValue(sourceProp, destProp.GetValue(mappableObject), destionationObject);
                 if (error != ErrorType.Success)
+                {
                     return ResultT<TSource>.Failure(
                         Error.Create(ErrorExtension.GetDescription(sourceProp, sourceProp, error), error));
+                }
             }
+        }
 
         return ResultT<TSource>.Success(destionationObject);
     }
@@ -100,7 +111,8 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
     {
         try
         {
-            if (!IgnoreNullValues) return ErrorType.NullProperty;
+            if (!IgnoreNullValues)
+                return ErrorType.NullProperty;
 
             property.SetValue(destinationObject, sourceValue);
             return ErrorType.Success;

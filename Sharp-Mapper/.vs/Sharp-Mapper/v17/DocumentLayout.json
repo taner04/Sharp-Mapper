@@ -3,40 +3,12 @@
   "WorkspaceRootPath": "C:\\Projects\\Self-Library\\Sharp-Mapper\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\result\\errorextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:result\\errorextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\result\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:result\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\interface\\ivalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:interface\\ivalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\combine_attributes\\mappercombinenumbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\combine_attributes\\mappercombinenumbers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\mapper_partials\\update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\mapper_partials\\update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\subtract_attributes\\mappersubtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\subtract_attributes\\mappersubtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\validation_attributes\\mappingnullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\validation_attributes\\mappingnullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\validation_attributes\\mapperrequieredproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\validation_attributes\\mapperrequieredproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\validation_attributes\\mapperignoreproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\validation_attributes\\mapperignoreproperty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\mapperextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\mapperextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\mappercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,62 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\mapper\\mapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:mapper\\mapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\interface\\iunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:interface\\iunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\interface\\isubtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:interface\\isubtract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\interface\\imapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:interface\\imapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\interface\\icombiner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:interface\\icombiner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\test_objects\\numeric\\double\\doublemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\test_objects\\numeric\\double\\doublemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\test_objects\\string\\stringmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\test_objects\\string\\stringmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\test_objects\\numeric\\int\\intmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\test_objects\\numeric\\int\\intmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\combiner\\unittestcombinernumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\combiner\\unittestcombinernumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\test_objects\\numeric\\double\\doublemodelcombinedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\test_objects\\numeric\\double\\doublemodelcombinedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\subtract\\unittestsubtractnumeric.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\subtract\\unittestsubtractnumeric.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\combiner\\unittestcombinerstring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\combiner\\unittestcombinerstring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\test_objects\\numeric\\int\\intmodelsubtractdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\test_objects\\numeric\\int\\intmodelsubtractdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\test_objects\\numeric\\int\\intmodelcombinedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\test_objects\\numeric\\int\\intmodelcombinedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|c:\\projects\\self-library\\sharp-mapper\\units\\test_objects\\numeric\\double\\doubemodelsubtractdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}|Sharp-Mapper.csproj|solutionrelative:units\\test_objects\\numeric\\double\\doubemodelsubtractdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -163,326 +79,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ErrorExtension.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Result\\ErrorExtension.cs",
-              "RelativeDocumentMoniker": "Result\\ErrorExtension.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Result\\ErrorExtension.cs",
-              "RelativeToolTip": "Result\\ErrorExtension.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAA2wCEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:21:31.118Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Error.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Result\\Error.cs",
-              "RelativeDocumentMoniker": "Result\\Error.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Result\\Error.cs",
-              "RelativeToolTip": "Result\\Error.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:21:30.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MapperCombineNumbers.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
-              "RelativeDocumentMoniker": "Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
-              "RelativeToolTip": "Mapper\\Combine_Attributes\\MapperCombineNumbers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxUAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:21:02.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Update.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Mapper_Partials\\Update.cs",
               "RelativeDocumentMoniker": "Mapper\\Mapper_Partials\\Update.cs",
               "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Mapper_Partials\\Update.cs",
               "RelativeToolTip": "Mapper\\Mapper_Partials\\Update.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:20:35.039Z",
+              "WhenOpened": "2024-12-09T11:28:25.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MapperSubtract.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Subtract_Attributes\\MapperSubtract.cs",
-              "RelativeDocumentMoniker": "Mapper\\Subtract_Attributes\\MapperSubtract.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Subtract_Attributes\\MapperSubtract.cs",
-              "RelativeToolTip": "Mapper\\Subtract_Attributes\\MapperSubtract.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "MapperExtension.cs",
+              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\MapperExtension.cs",
+              "RelativeDocumentMoniker": "Mapper\\MapperExtension.cs",
+              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\MapperExtension.cs",
+              "RelativeToolTip": "Mapper\\MapperExtension.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAA0wCIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:20:32.24Z",
+              "WhenOpened": "2024-12-09T11:26:35.467Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MappingNullable.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Validation_Attributes\\MappingNullable.cs",
-              "RelativeDocumentMoniker": "Mapper\\Validation_Attributes\\MappingNullable.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Validation_Attributes\\MappingNullable.cs",
-              "RelativeToolTip": "Mapper\\Validation_Attributes\\MappingNullable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:20:30.725Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MapperRequieredProperty.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Validation_Attributes\\MapperRequieredProperty.cs",
-              "RelativeDocumentMoniker": "Mapper\\Validation_Attributes\\MapperRequieredProperty.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Validation_Attributes\\MapperRequieredProperty.cs",
-              "RelativeToolTip": "Mapper\\Validation_Attributes\\MapperRequieredProperty.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:20:29.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MapperIgnoreProperty.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Validation_Attributes\\MapperIgnoreProperty.cs",
-              "RelativeDocumentMoniker": "Mapper\\Validation_Attributes\\MapperIgnoreProperty.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Validation_Attributes\\MapperIgnoreProperty.cs",
-              "RelativeToolTip": "Mapper\\Validation_Attributes\\MapperIgnoreProperty.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:20:27.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MapperController.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\MapperController.cs",
-              "RelativeDocumentMoniker": "Mapper\\MapperController.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\MapperController.cs",
-              "RelativeToolTip": "Mapper\\MapperController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:19:03.902Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 3,
               "Title": "Mapper.cs",
               "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Mapper.cs",
               "RelativeDocumentMoniker": "Mapper\\Mapper.cs",
               "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\Mapper.cs",
               "RelativeToolTip": "Mapper\\Mapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAkwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:18:54.098Z",
+              "WhenOpened": "2024-12-09T11:25:41.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IValidation.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\IValidation.cs",
-              "RelativeDocumentMoniker": "Interface\\IValidation.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\IValidation.cs",
-              "RelativeToolTip": "Interface\\IValidation.cs",
+              "Title": "MapperController.cs",
+              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\MapperController.cs",
+              "RelativeDocumentMoniker": "Mapper\\MapperController.cs",
+              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Mapper\\MapperController.cs",
+              "RelativeToolTip": "Mapper\\MapperController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:18:51.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IUnit.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\IUnit.cs",
-              "RelativeDocumentMoniker": "Interface\\IUnit.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\IUnit.cs",
-              "RelativeToolTip": "Interface\\IUnit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:18:50.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ISubtract.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\ISubtract.cs",
-              "RelativeDocumentMoniker": "Interface\\ISubtract.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\ISubtract.cs",
-              "RelativeToolTip": "Interface\\ISubtract.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:18:49.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IMapper.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\IMapper.cs",
-              "RelativeDocumentMoniker": "Interface\\IMapper.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\IMapper.cs",
-              "RelativeToolTip": "Interface\\IMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:18:48.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ICombiner.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\ICombiner.cs",
-              "RelativeDocumentMoniker": "Interface\\ICombiner.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Interface\\ICombiner.cs",
-              "RelativeToolTip": "Interface\\ICombiner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:18:46.576Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "StringModel.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\String\\StringModel.cs",
-              "RelativeDocumentMoniker": "Units\\Test_Objects\\String\\StringModel.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\String\\StringModel.cs",
-              "RelativeToolTip": "Units\\Test_Objects\\String\\StringModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:18:30.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IntModel.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Int\\IntModel.cs",
-              "RelativeDocumentMoniker": "Units\\Test_Objects\\Numeric\\Int\\IntModel.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Int\\IntModel.cs",
-              "RelativeToolTip": "Units\\Test_Objects\\Numeric\\Int\\IntModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:17:58.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "UnitTestSubtractNumeric.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Subtract\\UnitTestSubtractNumeric.cs",
-              "RelativeDocumentMoniker": "Units\\Subtract\\UnitTestSubtractNumeric.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Subtract\\UnitTestSubtractNumeric.cs",
-              "RelativeToolTip": "Units\\Subtract\\UnitTestSubtractNumeric.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAwwC4AAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:16:47.286Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "IntModelCombineDto.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Int\\IntModelCombineDto.cs",
-              "RelativeDocumentMoniker": "Units\\Test_Objects\\Numeric\\Int\\IntModelCombineDto.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Int\\IntModelCombineDto.cs",
-              "RelativeToolTip": "Units\\Test_Objects\\Numeric\\Int\\IntModelCombineDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:16:16.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DoubleModelCombineDto.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Double\\DoubleModelCombineDto.cs",
-              "RelativeDocumentMoniker": "Units\\Test_Objects\\Numeric\\Double\\DoubleModelCombineDto.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Double\\DoubleModelCombineDto.cs",
-              "RelativeToolTip": "Units\\Test_Objects\\Numeric\\Double\\DoubleModelCombineDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:15:11.852Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "DoubleModel.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Double\\DoubleModel.cs",
-              "RelativeDocumentMoniker": "Units\\Test_Objects\\Numeric\\Double\\DoubleModel.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Double\\DoubleModel.cs",
-              "RelativeToolTip": "Units\\Test_Objects\\Numeric\\Double\\DoubleModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:14:36.959Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "DoubeModelSubtractDto.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Double\\DoubeModelSubtractDto.cs",
-              "RelativeDocumentMoniker": "Units\\Test_Objects\\Numeric\\Double\\DoubeModelSubtractDto.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Double\\DoubeModelSubtractDto.cs",
-              "RelativeToolTip": "Units\\Test_Objects\\Numeric\\Double\\DoubeModelSubtractDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:14:34.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "IntModelSubtractDto.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Int\\IntModelSubtractDto.cs",
-              "RelativeDocumentMoniker": "Units\\Test_Objects\\Numeric\\Int\\IntModelSubtractDto.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Test_Objects\\Numeric\\Int\\IntModelSubtractDto.cs",
-              "RelativeToolTip": "Units\\Test_Objects\\Numeric\\Int\\IntModelSubtractDto.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAwAQAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:14:12.629Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UnitTestCombinerNumber.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Combiner\\UnitTestCombinerNumber.cs",
-              "RelativeDocumentMoniker": "Units\\Combiner\\UnitTestCombinerNumber.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Combiner\\UnitTestCombinerNumber.cs",
-              "RelativeToolTip": "Units\\Combiner\\UnitTestCombinerNumber.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAwwC4AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:13:00.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "UnitTestCombinerString.cs",
-              "DocumentMoniker": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Combiner\\UnitTestCombinerString.cs",
-              "RelativeDocumentMoniker": "Units\\Combiner\\UnitTestCombinerString.cs",
-              "ToolTip": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Units\\Combiner\\UnitTestCombinerString.cs",
-              "RelativeToolTip": "Units\\Combiner\\UnitTestCombinerString.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:12:10.335Z",
+              "WhenOpened": "2024-12-09T11:25:41.127Z",
               "EditorCaption": ""
             }
           ]
