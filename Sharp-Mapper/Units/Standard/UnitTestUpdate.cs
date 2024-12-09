@@ -1,4 +1,4 @@
-﻿using Sharp_Mapper.Interface;
+﻿using Sharp_Mapper.Interface.Unit;
 using Sharp_Mapper.Mapper;
 using Sharp_Mapper.Units.Test_Objects;
 

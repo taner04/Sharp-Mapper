@@ -1,5 +1,6 @@
 using Sharp_Mapper.Interface;
 using Sharp_Mapper.Mapper.Costum_Attributes;
+using Sharp_Mapper.Mapper.Subtract_Attributes;
 using Sharp_Mapper.Mapper.Validation_Attributes;
 using Sharp_Mapper.Result;
 using System.Reflection;
@@ -40,6 +41,24 @@ public class MapperExtension<TDestination, TSource>
         return false;
     }
 
+    public bool ContainsSubtractAttribute(List<Attribute>? attributes, out ISubtract combiner)
+    {
+        if (attributes != null)
+        {
+            foreach (var attribute in attributes)
+            {
+                if (attribute.GetType() == typeof(MapperSubtract))
+                {
+                    combiner = (ISubtract)attribute;
+                    return true;
+                }
+            }
+        }
+
+        combiner = null!;
+        return false;
+    }
+
     public bool ContainsValidationAttribute(List<Attribute>? attributes, out IValidation validator)
     {
         if (attributes != null)
@@ -59,16 +78,33 @@ public class MapperExtension<TDestination, TSource>
         return false;
     }
 
-    public object[] GetCombinerValues(PropertyInfo[] propertys, ICombiner combiner, TSource mappableObject)
+    public object[] GetValuesForCombinerAtr(PropertyInfo[] propertys, ICombiner combiner, TSource mappableObject)
     {
         var combinerValues = new object[2];
         foreach (var sourceProperty in propertys)
         {
-            if (sourceProperty.Name == (string)combiner.Value1)
+            if (sourceProperty.Name == (string)combiner.PropertyName1)
             {
                 combinerValues[0] = sourceProperty.GetValue(mappableObject)!;
             }
-            if (sourceProperty.Name == (string)combiner.Value2)
+            if (sourceProperty.Name == (string)combiner.PropertyName2)
+            {
+                combinerValues[1] = sourceProperty.GetValue(mappableObject)!;
+            }
+        }
+        return combinerValues;
+    }
+
+    public object[] GetValuesForSubtractAtr(PropertyInfo[] propertys, ISubtract subtract, TSource mappableObject)
+    {
+        var combinerValues = new object[2];
+        foreach (var sourceProperty in propertys)
+        {
+            if (sourceProperty.Name == (string)subtract.PropertyName1)
+            {
+                combinerValues[0] = sourceProperty.GetValue(mappableObject)!;
+            }
+            if (sourceProperty.Name == (string)subtract.PropertyName2)
             {
                 combinerValues[1] = sourceProperty.GetValue(mappableObject)!;
             }

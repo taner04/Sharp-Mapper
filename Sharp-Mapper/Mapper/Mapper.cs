@@ -29,9 +29,10 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
 
             var propertyAtr = destProp.GetCustomAttributes().ToList();
             var containsCombineAtr = MapperExtension.ContainsCombineAttribute(propertyAtr, out var combiner);
+            var containsSubtractAtr = MapperExtension.ContainsSubtractAttribute(propertyAtr, out var subtract);
 
             ErrorType error;
-            if (!containsCombineAtr && IgnoreAttributes)
+            if (!containsCombineAtr && !containsSubtractAtr)
             {
                 var sourceValue = sourceProp.GetValue(mappableObject);
                 var containsValidationAtr= MapperExtension.ContainsValidationAttribute(propertyAtr, out var validator) && IgnoreAttributes == false;
@@ -61,7 +62,10 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
             }
             else
             {
-                var value = combiner.Combine(MapperExtension.GetCombinerValues(SourcePropertiesInfo, combiner, mappableObject));
+                var value = containsCombineAtr ?
+                    combiner.Combine(MapperExtension.GetValuesForCombinerAtr(SourcePropertiesInfo, combiner, mappableObject)) :
+                    subtract.Combine(MapperExtension.GetValuesForSubtractAtr(SourcePropertiesInfo, subtract, mappableObject));
+
                 error = SetPropertyValue(destProp, value, destionationObject);
                 if (error != ErrorType.Success)
                 {

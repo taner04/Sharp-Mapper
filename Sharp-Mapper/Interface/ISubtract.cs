@@ -1,9 +1,6 @@
 ﻿namespace Sharp_Mapper.Interface;
 
-/// <summary>
-/// Defines a method to combine an object with a source object.
-/// </summary>
-public interface ICombiner
+public interface ISubtract
 {
     object PropertyName1 { get; set; }
     object PropertyName2 { get; set; }

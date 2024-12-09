@@ -1,13 +1,13 @@
-﻿namespace Sharp_Mapper.Units.Test_Objects.Combiner.Numeric_Combiner
+﻿namespace Sharp_Mapper.Units.Test_Objects.Combiner.Numeric.Int
 {
-    internal class NumericCombiner
+    internal class IntCombiner
     {
         public int FirstNumber { get; set; }
         public int SecondNumber { get; set; }
 
-        public static NumericCombiner GetTestObject()
+        public static IntCombiner GetTestObject()
         {
-            return new NumericCombiner
+            return new IntCombiner
             {
                 FirstNumber = 1,
                 SecondNumber = 2

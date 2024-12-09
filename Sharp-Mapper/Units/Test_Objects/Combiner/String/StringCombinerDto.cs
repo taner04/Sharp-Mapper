@@ -1,6 +1,6 @@
 ﻿using Sharp_Mapper.Mapper.Costum_Attributes;
 
-namespace Sharp_Mapper.Units.Test_Objects.Combiner.String_Combiner
+namespace Sharp_Mapper.Units.Test_Objects.Combiner.String
 {
     internal class StringCombinerDto
     {
