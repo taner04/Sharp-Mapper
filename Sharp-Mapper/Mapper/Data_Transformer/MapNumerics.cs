@@ -1,15 +1,15 @@
 ﻿using Sharp_Mapper.Interface;
 
-namespace Sharp_Mapper.Mapper.Costum_Attributes;
+namespace Sharp_Mapper.Mapper.Data_Transformer;
 
 /// <summary>
 ///     Attribute to combine two numeric properties of a source object.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property)]
-internal class MapperCombineNumbers(object value1, object value2) : Attribute, ICombiner
+internal class MapNumerics(string value1, string value2) : Attribute, IDataTransformer
 {
-    public object PropertyName1 { get; set; } = value1;
-    public object PropertyName2 { get; set; } = value2;
+    public string PropertyName1 { get; set; } = value1;
+    public string PropertyName2 { get; set; } = value2;
 
     /// <summary>
     ///     Combines the values of the specified properties from the source object.

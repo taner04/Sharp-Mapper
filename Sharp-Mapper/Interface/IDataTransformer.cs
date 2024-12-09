@@ -1,9 +1,12 @@
 ﻿namespace Sharp_Mapper.Interface;
 
-public interface ISubtract
+/// <summary>
+///     Defines a method to combine an object with a source object.
+/// </summary>
+public interface IDataTransformer
 {
-    object PropertyName1 { get; set; }
-    object PropertyName2 { get; set; }
+    string PropertyName1 { get; set; }
+    string PropertyName2 { get; set; }
 
     /// <summary>
     ///     Combines the current object with the specified source object.

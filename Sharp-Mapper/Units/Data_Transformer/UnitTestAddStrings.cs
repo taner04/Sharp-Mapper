@@ -2,11 +2,11 @@
 using Sharp_Mapper.Mapper;
 using Sharp_Mapper.Units.Test_Objects.String;
 
-namespace Sharp_Mapper.Units.Combiner;
+namespace Sharp_Mapper.Units.Data_Transformer;
 
-internal class UnitTestCombinerString : IUnit
+internal class UnitTestAddStrings : IUnit
 {
-    public string TestType { get; } = "CombinerString";
+    public string TestType { get; } = "Transform string";
 
     public void Run()
     {

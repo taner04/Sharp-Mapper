@@ -1,16 +1,14 @@
 ﻿using Sharp_Mapper.Interface;
-using Sharp_Mapper.Units.Combiner;
+using Sharp_Mapper.Units.Data_Transformer;
 using Sharp_Mapper.Units.Standard;
-using Sharp_Mapper.Units.Subtract;
 
 var units = new List<IUnit>
 {
     new UnitTestMap(),
     new UnitTestMapBack(),
     new UnitTestUpdate(),
-    new UnitTestCombinerString(),
-    new UnitTestCombinerNumber(),
-    new UnitTestSubtractNumeric()
+    new UnitTestAddStrings(),
+    new UnitTestAddNumeric()
 };
 
 foreach (var unit in units)

@@ -1,9 +1,9 @@
-﻿using Sharp_Mapper.Mapper.Costum_Attributes;
+﻿using Sharp_Mapper.Mapper.Data_Transformer;
 
 namespace Sharp_Mapper.Units.Test_Objects.Numeric.Double;
 
 internal class DoubleModelCombineDto
 {
-    [MapperCombineNumbers("FirstNumber", "SecondNumber")]
+    [MapNumerics("FirstNumber", "SecondNumber")]
     public double Result { get; set; }
 }

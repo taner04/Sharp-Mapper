@@ -1,14 +1,14 @@
 ﻿using Sharp_Mapper.Interface;
 using Sharp_Mapper.Mapper;
+using Sharp_Mapper.Units.Test_Objects.Numeric.Double;
 using Sharp_Mapper.Units.Test_Objects.Numeric.Int;
 using Sharp_Mapper.Units.Test_Objects.Subtract.Numeric.Double;
-using Sharp_Mapper.Units.Test_Objects.Subtract.Numeric.Int;
 
-namespace Sharp_Mapper.Units.Subtract;
+namespace Sharp_Mapper.Units.Data_Transformer;
 
-internal class UnitTestSubtractNumeric : IUnit
+internal class UnitTestAddNumeric : IUnit
 {
-    public string TestType { get; } = "SubtractNumeric";
+    public string TestType { get; } = "Transform numeric";
 
     public void Run()
     {
@@ -20,15 +20,15 @@ internal class UnitTestSubtractNumeric : IUnit
 
     private void IntTest()
     {
-        var combiner = IntModel.GetTestObject(10, 5);
+        var combiner = IntModel.GetTestObject(5, 5);
 
-        var mapper = new Mapper<IntModelSubtractDto, IntModel>();
+        var mapper = new Mapper<IntModelCombineDto, IntModel>();
         var mapperResponse = mapper.Map(combiner);
 
         if (mapperResponse.IsSuccess)
         {
             var combinerDto = mapperResponse.Value;
-            if (combinerDto.Result == combiner.FirstNumber - combiner.SecondNumber)
+            if (combinerDto.Result == combiner.FirstNumber + combiner.SecondNumber)
                 UnitHelper.PrintSuccess(TestType);
             else
                 UnitHelper.PrintFail(TestType);
@@ -42,15 +42,15 @@ internal class UnitTestSubtractNumeric : IUnit
 
     private void DoubleTest()
     {
-        var combiner = DoubleModel.GetTestObject(10.5, 5.5);
+        var combiner = DoubleModel.GetTestObject(5.5, 4.5);
 
-        var mapper = new Mapper<DoubeModelSubtractDto, DoubleModel>();
+        var mapper = new Mapper<DoubleModelCombineDto, DoubleModel>();
         var mapperResponse = mapper.Map(combiner);
 
         if (mapperResponse.IsSuccess)
         {
             var combinerDto = mapperResponse.Value;
-            if (combinerDto.Result == combiner.FirstNumber - combiner.SecondNumber)
+            if (combinerDto.Result == combiner.FirstNumber + combiner.SecondNumber)
                 UnitHelper.PrintSuccess(TestType);
             else
                 UnitHelper.PrintFail(TestType);

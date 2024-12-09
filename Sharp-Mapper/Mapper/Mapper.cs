@@ -28,15 +28,14 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
             SourceProperties.TryGetValue(destProp.Name, out var sourceProp);
 
             var propertyAtr = destProp.GetCustomAttributes().ToList();
-            var containsCombineAtr = MapperExtension.ContainsCombineAttribute(propertyAtr, out var combiner);
-            var containsSubtractAtr = MapperExtension.ContainsSubtractAttribute(propertyAtr, out var subtract);
+            var containsCombineAtr = MapperHelper.ContainsCombineAttribute(propertyAtr, out var combiner);
 
             ErrorType error;
-            if (!containsCombineAtr && !containsSubtractAtr)
+            if (!containsCombineAtr)
             {
                 var sourceValue = sourceProp.GetValue(mappableObject);
                 var containsValidationAtr =
-                    MapperExtension.ContainsValidationAttribute(propertyAtr, out var validator) &&
+                    MapperHelper.ContainsValidationAttribute(propertyAtr, out var validator) &&
                     IgnoreAttributes == false;
 
                 if (!containsValidationAtr)
@@ -69,11 +68,8 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
             }
             else
             {
-                var value = containsCombineAtr
-                    ? combiner.Combine(
-                        MapperExtension.GetValuesForCombinerAtr(SourcePropertiesInfo, combiner, mappableObject))
-                    : subtract.Combine(
-                        MapperExtension.GetValuesForSubtractAtr(SourcePropertiesInfo, subtract, mappableObject));
+                var value = combiner.Combine(
+                        MapperHelper.GetValuesForCombinerAtr(SourcePropertiesInfo, combiner, mappableObject));
 
                 error = SetPropertyValue(destProp, value, destionationObject);
                 if (error != ErrorType.Success)

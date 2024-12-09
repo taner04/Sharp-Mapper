@@ -61,7 +61,7 @@ public abstract class MapperController<TDestination, TSource>(bool ignoreAttribu
 
     protected bool IgnoreNullValues { get; set; } = ignoreNullValues;
     protected bool IgnoreAttributes { get; set; } = ignoreAttributes;
-    protected static readonly MapperExtension<TDestination, TSource> MapperExtension = new();
+    protected static readonly MapperHelper<TDestination, TSource> MapperHelper = new();
 
     #endregion
 }

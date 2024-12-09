@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Units\Validation\" />
+    <Compile Remove="Units\Validation\**" />
+    <EmbeddedResource Remove="Units\Validation\**" />
+    <None Remove="Units\Validation\**" />
   </ItemGroup>
 
 </Project>

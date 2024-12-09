@@ -6,7 +6,7 @@ namespace Sharp_Mapper.Units.Standard;
 
 internal class UnitTestMapBack : IUnit
 {
-    public string TestType { get; } = "MapBack";
+    public string TestType { get; } = "Map back";
 
     public void Run()
     {
