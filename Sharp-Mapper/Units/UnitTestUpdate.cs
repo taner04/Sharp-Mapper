@@ -16,7 +16,6 @@ namespace Sharp_Mapper.Units
             var mapper = new Mapper<EmployeeDto, Employee>();
             mapper.Update(employeeDto, ref employee);
 
-            // Assert
             if (employee != null &&
                 employee.Id == employeeDto.Id &&
                 employee.Firstname == employeeDto.Firstname &&

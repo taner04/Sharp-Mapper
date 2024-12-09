@@ -2,6 +2,7 @@ using Sharp_Mapper.Interface;
 using Sharp_Mapper.Mapper.Costum_Attributes;
 using Sharp_Mapper.Mapper.Validation_Attributes;
 using Sharp_Mapper.Result;
+using System.Reflection;
 
 namespace Sharp_Mapper.Mapper;
 
@@ -27,7 +28,7 @@ public class MapperExtension<TDestination, TSource>
                     combiner = (ICombiner)attribute;
                     return true;
                 }
-                if (attribute.GetType() == typeof(MapperCombineNumbers<object>))
+                if (attribute.GetType() == typeof(MapperCombineNumbers))
                 {
                     combiner = (ICombiner)attribute;
                     return true;
@@ -56,5 +57,22 @@ public class MapperExtension<TDestination, TSource>
 
         validator = null!;
         return false;
+    }
+
+    public object[] GetCombinerValues(PropertyInfo[] propertys, ICombiner combiner, TSource mappableObject)
+    {
+        var combinerValues = new object[2];
+        foreach (var sourceProperty in propertys)
+        {
+            if (sourceProperty.Name == (string)combiner.Value1)
+            {
+                combinerValues[0] = sourceProperty.GetValue(mappableObject)!;
+            }
+            if (sourceProperty.Name == (string)combiner.Value2)
+            {
+                combinerValues[1] = sourceProperty.GetValue(mappableObject)!;
+            }
+        }
+        return combinerValues;
     }
 }

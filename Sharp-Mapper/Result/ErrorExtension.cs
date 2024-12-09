@@ -49,8 +49,8 @@ public static class ErrorExtension
         var propertyClassName = propertyInfo?.DeclaringType?.Name ?? "Unknown class";
         var propertyPropertyType = propertyInfo?.PropertyType;
         var propertyTypeName = propertyPropertyType?.Name ?? "Unknown type";
-        var isNullable = Nullable.GetUnderlyingType(propertyPropertyType) != null;
-
-        return $"{propertyClassName}, {propertyTypeName}{(isNullable ? " (nullable)" : "")}";
+        //var isNullable = Nullable.GetUnderlyingType(propertyPropertyType) != null;
+        //return $"{propertyClassName}, {propertyTypeName}{(isNullable ? " (nullable)" : "")}";
+        return $"{propertyClassName}, {propertyTypeName}";
     }
 }

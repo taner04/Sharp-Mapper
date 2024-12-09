@@ -26,28 +26,32 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
         foreach (var destProp in DestinationPropertyInfos)
         {
             SourceProperties.TryGetValue(destProp.Name, out var sourceProp);
-            var sourceValue = sourceProp.GetValue(mappableObject);
+
             var propertyAtr = destProp.GetCustomAttributes().ToList();
+            var containsCombineAtr = MapperExtension.ContainsCombineAttribute(propertyAtr, out var combiner);
 
-            var containsCombineAtr = MapperExtension.ContainsCombineAttribute(propertyAtr, out var combiner) && IgnoreAttributes == false;
-
-            if (!containsCombineAtr)
+            ErrorType error;
+            if (!containsCombineAtr && IgnoreAttributes)
             {
+                var sourceValue = sourceProp.GetValue(mappableObject);
                 var containsValidationAtr= MapperExtension.ContainsValidationAttribute(propertyAtr, out var validator) && IgnoreAttributes == false;
                 if (!containsValidationAtr)
                 {
-                    var error = SetPropertyValue(destProp, sourceValue, destionationObject);
+                    error = SetPropertyValue(destProp, sourceValue, destionationObject);
                     if (error != ErrorType.Success)
+                    {
                         return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
+                    }
                 }
                 else
                 {
                     if (validator.IsValid(sourceValue))
                     {
-                        var error = SetPropertyValue(destProp, sourceValue, destionationObject);
+                        error = SetPropertyValue(destProp, sourceValue, destionationObject);
                         if (error != ErrorType.Success)
+                        {
                             return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
-
+                        }
                     }
                     else
                     {
@@ -57,7 +61,12 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
             }
             else
             {
-                combiner.Combine(sourceValue);
+                var value = combiner.Combine(MapperExtension.GetCombinerValues(SourcePropertiesInfo, combiner, mappableObject));
+                error = SetPropertyValue(destProp, value, destionationObject);
+                if (error != ErrorType.Success)
+                {
+                    return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
+                }
             }
         }
         return ResultT<TDestination>.Success(destionationObject);
@@ -89,10 +98,7 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
             {
                 return ErrorType.NullProperty;
             }
-            if (ignoreNullValues && sourceValue == null)
-            {
-                return ErrorType.NullProperty;
-            }
+
             property.SetValue(destinationObject, sourceValue);
             return ErrorType.Success;
         }
