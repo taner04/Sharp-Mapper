@@ -1,13 +1,13 @@
-﻿namespace Sharp_Mapper.Units.Test_Objects.Combiner_Objects
+﻿namespace Sharp_Mapper.Units.Test_Objects.Combiner.String_Combiner
 {
-    internal class Combiner
+    internal class StringCombiner
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
 
-        public static Combiner GetTestObject()
+        public static StringCombiner GetTestObject()
         {
-            return new Combiner
+            return new StringCombiner
             {
                 Firstname = "John",
                 Lastname = "Doe"

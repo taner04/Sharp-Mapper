@@ -20,9 +20,6 @@ namespace Sharp_Mapper.Mapper.Validation_Attributes
         /// <param name="source">The source object to validate.</param>
         /// <returns>True if the source object is valid; otherwise, false.</returns>
         /// <exception cref="NotImplementedException">Thrown when the method is not implemented.</exception>
-        public bool IsValid(object? source)
-        {
-            throw new NotImplementedException();
-        }
+        public bool IsValid(object? source) => true;
     }
 }

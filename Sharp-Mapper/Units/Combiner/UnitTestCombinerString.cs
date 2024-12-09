@@ -1,18 +1,17 @@
 ﻿using Sharp_Mapper.Interface;
 using Sharp_Mapper.Mapper;
-using Sharp_Mapper.Units.Test_Objects.Combiner_Objects;
+using Sharp_Mapper.Units.Test_Objects.Combiner.String_Combiner;
 
-
-namespace Sharp_Mapper.Units
+namespace Sharp_Mapper.Units.Combiner
 {
     internal class UnitTestCombinerString : IUnit
     {
         public string TestType { get; } = "CombinerString";
         public void Run()
         {
-            var combiner = Combiner.GetTestObject();
+            var combiner = StringCombiner.GetTestObject();
 
-            var mapper = new Mapper<CombinerDto, Combiner>();
+            var mapper = new Mapper<StringCombinerDto, StringCombiner>();
             var mapperResponse = mapper.Map(combiner);
 
             if (mapperResponse.IsSuccess)

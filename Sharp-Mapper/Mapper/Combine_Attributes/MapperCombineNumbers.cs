@@ -9,7 +9,7 @@ namespace Sharp_Mapper.Mapper.Costum_Attributes
     internal class MapperCombineNumbers(object value1, object value2) : Attribute, ICombiner
     {
         public object Value1 { get; set; } = value1;
-        public object Value2 { get; set; } = value1;
+        public object Value2 { get; set; } = value2;
 
         /// <summary>
         /// Combines the values of the specified properties from the source object.

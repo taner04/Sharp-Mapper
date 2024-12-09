@@ -2,7 +2,7 @@
 using Sharp_Mapper.Mapper;
 using Sharp_Mapper.Units.Test_Objects;
 
-namespace Sharp_Mapper.Units
+namespace Sharp_Mapper.Units.Standard
 {
     internal class UnitTestUpdate : IUnit
     {

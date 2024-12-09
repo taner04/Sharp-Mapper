@@ -2,27 +2,25 @@
 using Sharp_Mapper.Mapper;
 using Sharp_Mapper.Units.Test_Objects;
 
-namespace Sharp_Mapper.Units
+namespace Sharp_Mapper.Units.Standard
 {
-    internal class UnitTestMap : IUnit
+    internal class UnitTestMapBack : IUnit
     {
-        public string TestType { get; } = "Map";
+        public string TestType { get; } = "MapBack";
 
         public void Run()
         {
-            var employee = Employee.GetTestObject();
+            var employeeDto = EmployeeDto.GetTestObject();
 
             var mapper = new Mapper<EmployeeDto, Employee>();
-            var mapperResponse = mapper.Map(employee);
+            var mapperResponse = mapper.MapBack(employeeDto);
 
             if (mapperResponse.IsSuccess)
             {
-                var employeeDto = mapperResponse.Value;
-                if (
-                    employeeDto.Id == employee.Id
-                    && employeeDto.Firstname == employee.Firstname
-                    && employeeDto.Lastname == employee.Lastname
-                )
+                var employee = mapperResponse.Value;
+                if (employeeDto.Id == employee.Id &&
+                    employeeDto.Firstname == employee.Firstname &&
+                    employeeDto.Lastname == employee.Lastname)
                 {
                     UnitHelper.PrintSuccess(TestType);
                 }

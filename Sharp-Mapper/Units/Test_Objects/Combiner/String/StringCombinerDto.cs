@@ -1,8 +1,8 @@
 ﻿using Sharp_Mapper.Mapper.Costum_Attributes;
 
-namespace Sharp_Mapper.Units.Test_Objects.Combiner_Objects
+namespace Sharp_Mapper.Units.Test_Objects.Combiner.String_Combiner
 {
-    internal class CombinerDto
+    internal class StringCombinerDto
     {
         [MapperCombineString("Firstname", "Lastname")]
         public string Fullname { get; set; }
