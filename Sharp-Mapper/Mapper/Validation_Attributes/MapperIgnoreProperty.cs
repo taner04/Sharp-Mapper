@@ -7,7 +7,7 @@ namespace Sharp_Mapper.Mapper.Validation_Attributes;
 ///     Attribute to indicate that a property should be ignored by the mapper.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property)]
-internal class MapperIgnoreProperty : Attribute, IValidation
+public class MapperIgnoreProperty : Attribute, IValidation
 {
     /// <summary>
     ///     Gets or sets the type of error that occurred during validation.

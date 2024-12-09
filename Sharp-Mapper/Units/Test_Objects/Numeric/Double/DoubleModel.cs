@@ -1,4 +1,4 @@
-﻿namespace Sharp_Mapper.Units.Test_Objects.Subtract.Numeric.Double;
+﻿namespace Sharp_Mapper.Units.Test_Objects.Numeric.Double;
 
 internal class DoubleModel
 {

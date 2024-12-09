@@ -7,7 +7,7 @@ namespace Sharp_Mapper.Mapper.Validation_Attributes;
 ///     Attribute to mark a property as required for mapping validation.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property)]
-internal class MapperRequieredProperty : Attribute, IValidation
+public class MapperRequieredProperty : Attribute, IValidation
 {
     /// <summary>
     ///     Gets or sets the type of error that occurs when validation fails.

@@ -1,0 +1,17 @@
+﻿namespace Mapper_Units.Test_Objects.Numeric.Double
+{
+    internal class DoubleModel
+    {
+        public double FirstNumber { get; set; }
+        public double SecondNumber { get; set; }
+
+        public static DoubleModel GetTestObject(double nr1, double nr2)
+        {
+            return new DoubleModel
+            {
+                FirstNumber = nr1,
+                SecondNumber = nr2
+            };
+        }
+    }
+}

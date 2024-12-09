@@ -2,7 +2,6 @@
 using Sharp_Mapper.Mapper;
 using Sharp_Mapper.Units.Test_Objects.Numeric.Double;
 using Sharp_Mapper.Units.Test_Objects.Numeric.Int;
-using Sharp_Mapper.Units.Test_Objects.Subtract.Numeric.Double;
 
 namespace Sharp_Mapper.Units.Data_Transformer;
 

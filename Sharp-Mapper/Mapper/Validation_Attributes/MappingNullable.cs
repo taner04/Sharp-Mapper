@@ -7,7 +7,7 @@ namespace Sharp_Mapper.Mapper.Validation_Attributes;
 ///     Attribute to indicate that a property can be nullable.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property)]
-internal class MappingNullable : Attribute, IValidation
+public class MappingNullable : Attribute, IValidation
 {
     /// <summary>
     ///     Gets or sets the type of error that occurred.

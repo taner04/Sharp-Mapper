@@ -17,7 +17,7 @@ internal static class UnitHelper
     public static void PrintError<T>(ResultT<T> mapperResponse)
     {
         Console.WriteLine("Error: Mapping error");
-        Console.WriteLine($"Header {mapperResponse.Error?.Type}");
-        Console.WriteLine($"Header {mapperResponse.Error?.Description}");
+        Console.WriteLine($"Header {mapperResponse.Error?.Type ?? "Unknown header"}");
+        Console.WriteLine($"Description {mapperResponse.Error?.Description ?? "Unknown descr."}");
     }
 }

@@ -6,7 +6,7 @@ namespace Sharp_Mapper.Mapper.Data_Transformer;
 ///     Attribute to combine two numeric properties of a source object.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property)]
-internal class MapNumerics(string value1, string value2) : Attribute, IDataTransformer
+public class MapNumerics(string value1, string value2) : Attribute, IDataTransformer
 {
     public string PropertyName1 { get; set; } = value1;
     public string PropertyName2 { get; set; } = value2;
