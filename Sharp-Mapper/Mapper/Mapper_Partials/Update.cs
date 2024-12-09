@@ -1,66 +1,65 @@
 ﻿using Sharp_Mapper.Result;
 
-namespace Sharp_Mapper.Mapper
+namespace Sharp_Mapper.Mapper;
+
+public sealed partial class Mapper<TDestination, TSource>
 {
-    public sealed partial class Mapper<TDestination, TSource>
+    public void Update<TType>(object source, ref TType destination)
     {
-        public void Update<TType>(object source, ref TType destination)
+        switch (destination)
         {
-            switch (destination)
-            {
-                case TDestination:
-                    {
-                        UpdateDestination(source, ref destination);
-                        break;
-                    }
-                case TSource:
-                    {
-                        UpdateSource(source, ref destination);
-                        break;
-                    }
-            }
-        }
-
-        private void UpdateSource<T>(object source, ref T destination)
-        {
-            foreach (var sourceProp in SourcePropertiesInfo)
-            {
-                if (DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
+            case TDestination:
                 {
-                    var type = source?.GetType().GetProperty(destProp.Name);
-                    var value = type?.GetValue(source);
+                    UpdateDestination(source, ref destination);
+                    break;
+                }
+            case TSource:
+                {
+                    UpdateSource(source, ref destination);
+                    break;
+                }
+        }
+    }
 
-                    if (value == null)
-                        continue;
+    private void UpdateSource<T>(object source, ref T destination)
+    {
+        foreach (var sourceProp in SourcePropertiesInfo)
+            if (DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
+            {
+                var type = source?.GetType().GetProperty(destProp.Name);
+                var value = type?.GetValue(source);
 
-                    var error = SetPropertyValue(sourceProp, value, destination);
-                    if (error != ErrorType.Success)
-                    {
-                        throw new Exception(ErrorExtension.GetDescription(sourceProp, destProp, error));
-                    }
+                if (value == null)
+                {
+                    continue;
+                }
+
+                var error = SetPropertyValue(sourceProp, value, destination);
+                if (error != ErrorType.Success)
+                {
+                    throw new Exception(ErrorExtension.GetDescription(sourceProp, destProp, error));
                 }
             }
-        }
+    }
 
-        private void UpdateDestination<T>(object source, ref T destination)
-        {
-            foreach (var destinProp in DestinationPropertyInfos)
+    private void UpdateDestination<T>(object source, ref T destination)
+    {
+        foreach (var destinProp in DestinationPropertyInfos)
+            if (SourceProperties.TryGetValue(destinProp.Name, out var soureProp))
             {
-                if (SourceProperties.TryGetValue(destinProp.Name, out var soureProp))
+                var type = source?.GetType().GetProperty(soureProp.Name);
+                var value = type?.GetValue(source);
+
+                if (value == null)
                 {
-                    var type = source?.GetType().GetProperty(soureProp.Name);
-                    var value = type?.GetValue(source);
+                    continue;
+                }
 
-                    if (value == null)
-                        continue;
-
-                    var error = SetPropertyValue(destinProp, value, destination);
-                    if (error != ErrorType.Success)
-                    {
-                        throw new Exception(ErrorExtension.GetDescription(destinProp, soureProp, error));
-                    }
+                var error = SetPropertyValue(destinProp, value, destination);
+                if (error != ErrorType.Success)
+                {
+                    throw new Exception(ErrorExtension.GetDescription(destinProp, soureProp, error));
                 }
             }
-        }
     }
 }

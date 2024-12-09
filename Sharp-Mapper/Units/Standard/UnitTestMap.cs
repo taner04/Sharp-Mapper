@@ -1,41 +1,36 @@
-﻿using Sharp_Mapper.Interface.Unit;
+﻿using Sharp_Mapper.Interface;
 using Sharp_Mapper.Mapper;
 using Sharp_Mapper.Units.Test_Objects;
 
-namespace Sharp_Mapper.Units.Standard
+namespace Sharp_Mapper.Units.Standard;
+
+internal class UnitTestMap : IUnit
 {
-    internal class UnitTestMap : IUnit
+    public string TestType { get; } = "Map";
+
+    public void Run()
     {
-        public string TestType { get; } = "Map";
+        var employee = Employee.GetTestObject();
 
-        public void Run()
+        var mapper = new Mapper<EmployeeDto, Employee>();
+        var mapperResponse = mapper.Map(employee);
+
+        if (mapperResponse.IsSuccess)
         {
-            var employee = Employee.GetTestObject();
-
-            var mapper = new Mapper<EmployeeDto, Employee>();
-            var mapperResponse = mapper.Map(employee);
-
-            if (mapperResponse.IsSuccess)
-            {
-                var employeeDto = mapperResponse.Value;
-                if (
-                    employeeDto.Id == employee.Id
-                    && employeeDto.Firstname == employee.Firstname
-                    && employeeDto.Lastname == employee.Lastname
-                )
-                {
-                    UnitHelper.PrintSuccess(TestType);
-                }
-                else
-                {
-                    UnitHelper.PrintFail(TestType);
-                }
-            }
+            var employeeDto = mapperResponse.Value;
+            if (
+                employeeDto.Id == employee.Id
+                && employeeDto.Firstname == employee.Firstname
+                && employeeDto.Lastname == employee.Lastname
+            )
+                UnitHelper.PrintSuccess(TestType);
             else
-            {
-                UnitHelper.PrintError(mapperResponse);
                 UnitHelper.PrintFail(TestType);
-            }
+        }
+        else
+        {
+            UnitHelper.PrintError(mapperResponse);
+            UnitHelper.PrintFail(TestType);
         }
     }
 }

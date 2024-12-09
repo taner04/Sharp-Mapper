@@ -1,4 +1,4 @@
-﻿namespace Sharp_Mapper.Interface.Unit;
+﻿namespace Sharp_Mapper.Interface;
 
 internal interface IUnit
 {

@@ -5,12 +5,12 @@ using System.Text;
 namespace Sharp_Mapper.Result;
 
 /// <summary>
-/// Provides extension methods for handling errors.
+///     Provides extension methods for handling errors.
 /// </summary>
 public static class ErrorExtension
 {
     /// <summary>
-    /// Gets the header description of the specified error type.
+    ///     Gets the header description of the specified error type.
     /// </summary>
     /// <param name="errorType">The error type.</param>
     /// <returns>The description of the error type if available; otherwise, the error type as a string.</returns>
@@ -22,7 +22,7 @@ public static class ErrorExtension
     }
 
     /// <summary>
-    /// Gets the description of the error based on the source and destination properties and the error type.
+    ///     Gets the description of the error based on the source and destination properties and the error type.
     /// </summary>
     /// <param name="sourceProp">The source property.</param>
     /// <param name="destinProp">The destination property.</param>
@@ -40,7 +40,7 @@ public static class ErrorExtension
     }
 
     /// <summary>
-    /// Gets the text representation of the specified property.
+    ///     Gets the text representation of the specified property.
     /// </summary>
     /// <param name="propertyInfo">The property information.</param>
     /// <returns>A string representing the property.</returns>

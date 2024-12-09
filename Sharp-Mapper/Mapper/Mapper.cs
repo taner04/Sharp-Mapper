@@ -1,11 +1,11 @@
+using System.Reflection;
 using Sharp_Mapper.Interface;
 using Sharp_Mapper.Result;
-using System.Reflection;
 
 namespace Sharp_Mapper.Mapper;
 
 /// <summary>
-/// Provides functionality to map properties between source and destination objects.
+///     Provides functionality to map properties between source and destination objects.
 /// </summary>
 /// <typeparam name="TDestination">The type of the destination object.</typeparam>
 /// <typeparam name="TSource">The type of the source object.</typeparam>
@@ -15,7 +15,7 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
     : MapperController<TDestination, TSource>(ignoreAttributes, ignoreNullValues), IMapper<TDestination, TSource>
 {
     /// <summary>
-    /// Maps properties from the source object to a new instance of the destination object.
+    ///     Maps properties from the source object to a new instance of the destination object.
     /// </summary>
     /// <param name="mappableObject">The source object.</param>
     /// <returns>A result containing the mapped destination object or an error.</returns>
@@ -35,14 +35,15 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
             if (!containsCombineAtr && !containsSubtractAtr)
             {
                 var sourceValue = sourceProp.GetValue(mappableObject);
-                var containsValidationAtr= MapperExtension.ContainsValidationAttribute(propertyAtr, out var validator) && IgnoreAttributes == false;
+                var containsValidationAtr =
+                    MapperExtension.ContainsValidationAttribute(propertyAtr, out var validator) &&
+                    IgnoreAttributes == false;
                 if (!containsValidationAtr)
                 {
                     error = SetPropertyValue(destProp, sourceValue, destionationObject);
                     if (error != ErrorType.Success)
-                    {
-                        return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
-                    }
+                        return ResultT<TDestination>.Failure(
+                            Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
                 }
                 else
                 {
@@ -50,29 +51,32 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
                     {
                         error = SetPropertyValue(destProp, sourceValue, destionationObject);
                         if (error != ErrorType.Success)
-                        {
-                            return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
-                        }
+                            return ResultT<TDestination>.Failure(
+                                Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
                     }
                     else
                     {
-                        return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, validator.ErrorType), validator.ErrorType));
+                        return ResultT<TDestination>.Failure(Error.Create(
+                            ErrorExtension.GetDescription(sourceProp, destProp, validator.ErrorType),
+                            validator.ErrorType));
                     }
                 }
             }
             else
             {
-                var value = containsCombineAtr ?
-                    combiner.Combine(MapperExtension.GetValuesForCombinerAtr(SourcePropertiesInfo, combiner, mappableObject)) :
-                    subtract.Combine(MapperExtension.GetValuesForSubtractAtr(SourcePropertiesInfo, subtract, mappableObject));
+                var value = containsCombineAtr
+                    ? combiner.Combine(
+                        MapperExtension.GetValuesForCombinerAtr(SourcePropertiesInfo, combiner, mappableObject))
+                    : subtract.Combine(
+                        MapperExtension.GetValuesForSubtractAtr(SourcePropertiesInfo, subtract, mappableObject));
 
                 error = SetPropertyValue(destProp, value, destionationObject);
                 if (error != ErrorType.Success)
-                {
-                    return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
-                }
+                    return ResultT<TDestination>.Failure(
+                        Error.Create(ErrorExtension.GetDescription(sourceProp, destProp, error), error));
             }
         }
+
         return ResultT<TDestination>.Success(destionationObject);
     }
 
@@ -81,16 +85,14 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
         var destionationObject = Activator.CreateInstance<TSource>();
 
         foreach (var sourceProp in SourcePropertiesInfo)
-        {
             if (DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
             {
                 var error = SetPropertyValue(sourceProp, destProp.GetValue(mappableObject), destionationObject);
                 if (error != ErrorType.Success)
-                {
-                    return ResultT<TSource>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, sourceProp, error), error));
-                }
+                    return ResultT<TSource>.Failure(
+                        Error.Create(ErrorExtension.GetDescription(sourceProp, sourceProp, error), error));
             }
-        }
+
         return ResultT<TSource>.Success(destionationObject);
     }
 
@@ -98,10 +100,7 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
     {
         try
         {
-            if (!IgnoreNullValues)
-            {
-                return ErrorType.NullProperty;
-            }
+            if (!IgnoreNullValues) return ErrorType.NullProperty;
 
             property.SetValue(destinationObject, sourceValue);
             return ErrorType.Success;
