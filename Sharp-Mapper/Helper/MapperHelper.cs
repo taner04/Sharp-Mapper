@@ -21,8 +21,7 @@ public class MapperHelper<TDestination, TSource>
             foreach (var attribute in attributes)
             {
                 var atrType = attribute.GetType();
-                if (atrType != typeof(MapNumerics) && atrType != typeof(MapStrings))
-                    continue;
+                if (atrType != typeof(MapNumerics) && atrType != typeof(MapStrings)) continue;
 
                 dataTransformer = (IDataTransformer)attribute;
                 return true;
@@ -39,8 +38,7 @@ public class MapperHelper<TDestination, TSource>
         {
             foreach (var attribute in attributes)
             {
-                if (attribute.GetType() != typeof(MapperRequieredProperty))
-                    continue;
+                if (attribute.GetType() != typeof(MapperRequieredProperty)) continue;
 
                 validator = (IValidator)attribute;
                 validator.ErrorType = ErrorType.RequieredProperty;

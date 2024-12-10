@@ -20,7 +20,7 @@ public class MapStrings(string value1, string value2) : Attribute, IDataTransfor
     /// <param name="mappableObject"></param>
     /// <param name="value"></param>
     /// <returns>A string that is the combination of the two property values, separated by a space.</returns>
-    public ErrorType Combine<TDestination>(PropertyInfo[] source, TDestination mappableObject, out object? value)
+    public ErrorType Combine<TDestination>(PropertyInfo[] source, TDestination mappableObject, out object value)
     {
         var combinerValues = new object[2];
 

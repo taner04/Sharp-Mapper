@@ -28,7 +28,8 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
         foreach (var destinationProperty in DestinationPropertyInfos)
         {
             SourceProperties.TryGetValue(destinationProperty.Name, out var sourceProperty);
-
+            var value = sourceProperty?.GetValue(mappableObject);
+            
             var propertyAtr = destinationProperty.GetCustomAttributes().ToList();
 
             if(MapperHelper.ContainsCombineAttribute(propertyAtr, out var dateTransformer))
@@ -36,23 +37,19 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
                 var combinerResponse = dateTransformer.Combine(SourcePropertiesInfo, mappableObject, out var combinerValue);
                 if (combinerResponse != ErrorType.Success)
                 {
-                    return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProperty, destinationProperty, combinerResponse), combinerResponse));
+                    var desc = ErrorExtension.GetDescription(sourceProperty, destinationProperty, combinerResponse);
+                    return ResultT<TDestination>.Failure(Error.Create(desc, combinerResponse));
                 }
-
-                var setValueCombinerResponse = TrySetValue(sourceProperty, destinationProperty, combinerValue, mappableObject, destionationObject);
-                if (!setValueCombinerResponse.IsSuccess) return setValueCombinerResponse.Error!;
-
-                continue;
+                value = combinerValue;
             }
 
-            var sourceValue = sourceProperty?.GetValue(mappableObject);
-
-            if(MapperHelper.ContainsValidationAttribute(propertyAtr, out var validator) && !validator.IsValid(sourceValue))
+            if(MapperHelper.ContainsValidationAttribute(propertyAtr, out var validator) && !validator.IsValid(value))
             {
-                return ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProperty, destinationProperty, validator.ErrorType), validator.ErrorType));
+                var desc = ErrorExtension.GetDescription(sourceProperty, destinationProperty, validator.ErrorType);
+                return ResultT<TDestination>.Failure(Error.Create(desc, validator.ErrorType));
             }
 
-            var setValueResponse = TrySetValue(sourceProperty, destinationProperty, sourceValue, mappableObject, destionationObject);
+            var setValueResponse = TrySetValue(sourceProperty, destinationProperty, value, mappableObject, destionationObject);
             if (!setValueResponse.IsSuccess) return setValueResponse.Error!;
         }
 
@@ -70,8 +67,7 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
                 var error = SetPropertyValue(sourceProp, destProp.GetValue(mappableObject), destionationObject);
                 if (error != ErrorType.Success)
                 {
-                    return ResultT<TSource>.Failure(
-                        Error.Create(ErrorExtension.GetDescription(sourceProp, sourceProp, error), error));
+                    return ResultT<TSource>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, sourceProp, error), error));
                 }
             }
         }
