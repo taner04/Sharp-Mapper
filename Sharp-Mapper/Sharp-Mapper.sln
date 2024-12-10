@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharp-Mapper", "Sharp-Mapper.csproj", "{D1EDC376-0F6A-4A06-B5F7-007457CFFD64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper_Units", "..\Mapper_Units\Mapper_Units.csproj", "{135B0FD0-7F59-40BA-81EF-C8492535CEE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper.Units", "..\Mapper_Units\Mapper.Units.csproj", "{135B0FD0-7F59-40BA-81EF-C8492535CEE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

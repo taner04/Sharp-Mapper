@@ -28,7 +28,7 @@ public static class ErrorExtension
     /// <param name="destinProp">The destination property.</param>
     /// <param name="errorType">The error type.</param>
     /// <returns>A string describing the error.</returns>
-    public static string GetDescription(PropertyInfo sourceProp, PropertyInfo destinProp, ErrorType errorType)
+    public static string GetDescription(PropertyInfo? sourceProp, PropertyInfo destinProp, ErrorType errorType)
     {
         if (errorType == ErrorType.Unknown)
             return "Unknown Error";

@@ -23,6 +23,8 @@ public enum ErrorType
     [Description("Source propertys doesnt match")]
     MatchingProperty,
 
+    SetProperty,
+
     /// <summary>
     ///     Indicates that a required source property was empty.
     /// </summary>
@@ -38,7 +40,14 @@ public enum ErrorType
     /// <summary>
     ///     Indicates that if a property is null.
     /// </summary>
-    [Description("Property was null")] NullProperty
+    [Description("Property was null")] 
+    NullProperty,
+
+    [Description("Property for combining was empty")]
+    CombinePropEmpty,
+
+    [Description("Couldn't combine properties")]
+    CombineError
 }
 
 /// <summary>

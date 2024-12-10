@@ -965,9 +965,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Self-Library\\Mapper_Units\\Mapper_Units.csproj",
-      "projectName": "Mapper_Units",
-      "projectPath": "C:\\Projects\\Self-Library\\Mapper_Units\\Mapper_Units.csproj",
+      "projectUniqueName": "C:\\Projects\\Self-Library\\Mapper_Units\\Mapper.Units.csproj",
+      "projectName": "Mapper.Units",
+      "projectPath": "C:\\Projects\\Self-Library\\Mapper_Units\\Mapper.Units.csproj",
       "packagesPath": "C:\\Users\\TanerGadomski\\.nuget\\packages\\",
       "outputPath": "C:\\Projects\\Self-Library\\Mapper_Units\\obj\\",
       "projectStyle": "PackageReference",
