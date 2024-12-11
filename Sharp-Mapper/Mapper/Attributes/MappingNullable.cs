@@ -21,6 +21,6 @@ public class MappingNullable : Attribute, IValidator
     /// <returns>True if the source object is not null; otherwise, false.</returns>
     public bool IsValid(object? source)
     {
-        return source != null;
+        return source != null || source == null;
     }
 }

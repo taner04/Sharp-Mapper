@@ -1,4 +1,5 @@
 using Sharp_Mapper.Interface;
+using Sharp_Mapper.Mapper;
 using Sharp_Mapper.Mapper.Attributes;
 using Sharp_Mapper.Result;
 using System.Reflection;
@@ -90,8 +91,8 @@ public class MapperHelper<TDestination, TSource>
     {
         var error = SetPropertyValue(destinationProperty, value, destinationObject, ignoreNullValues);
 
-        return error != ErrorType.Success ?
-            ResultT<TType1>.Failure(Error.Create(ErrorHelper.GetDescription(sourceProperty, destinationProperty, error), error)) :
+        return error.ErrorType != ErrorType.Success ?
+            ResultT<TType1>.Failure(Error.Create(ErrorHelper.GetDescription(sourceProperty, destinationProperty, error.ErrorType), error.ErrorType, error.Exception)) :
             ResultT<TType1>.Success(sourceObject);
     }
 
@@ -104,18 +105,37 @@ public class MapperHelper<TDestination, TSource>
     /// <param name="destinationObject">The destination object.</param>
     /// <param name="ignoreNullValues">Whether to ignore null values.</param>
     /// <returns>An <see cref="ErrorType"/> indicating the result of the operation.</returns>
-    public ErrorType SetPropertyValue<T>(PropertyInfo property, object? sourceValue, T destinationObject, bool ignoreNullValues)
+    public InternalMapperResponse SetPropertyValue<T>(PropertyInfo property, object? sourceValue, T destinationObject, bool ignoreNullValues)
     {
+        var mapperInternalResponse = new InternalMapperResponse();
+
+        if (!ignoreNullValues && sourceValue == null)
+        {
+            mapperInternalResponse.ErrorType = ErrorType.NullProperty;
+            return mapperInternalResponse;
+        }
         try
         {
-            if (!ignoreNullValues) return ErrorType.NullProperty;
+            var targetType = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
+            var value = sourceValue == null ? null : Convert.ChangeType(sourceValue, targetType);
 
-            property.SetValue(destinationObject, sourceValue);
-            return ErrorType.Success;
+            property.SetValue(destinationObject, value);
+            mapperInternalResponse.ErrorType = ErrorType.Success;
         }
-        catch (Exception)
+        catch (Exception ex) when (ex is InvalidCastException || ex is ArgumentException)
         {
-            return ErrorType.Unknown;
+            mapperInternalResponse.ErrorType = ex is InvalidCastException
+                ? ErrorType.TypeMismatch
+                : ErrorType.InvalidAssignment;
+            mapperInternalResponse.Exception = ex;
         }
+        catch (Exception ex)
+        {
+            mapperInternalResponse.ErrorType = ErrorType.Unknown;
+            mapperInternalResponse.Exception = ex;
+        }
+
+
+        return mapperInternalResponse;
     }
 }

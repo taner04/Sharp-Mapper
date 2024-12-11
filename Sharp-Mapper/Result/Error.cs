@@ -58,7 +58,19 @@ public enum ErrorType
     ///     Indicates that properties couldn't be combined.
     /// </summary>
     [Description("Couldn't combine properties")]
-    CombineError
+    CombineError,
+
+    /// <summary>
+    ///     Indicates a type mismatch error.
+    /// </summary>
+    [Description("Type mismatch error")]
+    TypeMismatch,
+
+    /// <summary>
+    ///     Indicates an invalid assignment error.
+    /// </summary>
+    [Description("Invalid assignment error")]
+    InvalidAssignment,
 }
 
 /// <summary>
@@ -71,14 +83,17 @@ public class Error
     /// </summary>
     /// <param name="description">The description of the error.</param>
     /// <param name="errorType">The type of the error.</param>
+    /// <param name="exception">The exception associated with the error, if any.</param>
     private Error(
         string description,
-        ErrorType errorType
+        ErrorType errorType,
+        Exception? exception = null
     )
     {
         Type = ErrorHelper.GetHeader(errorType);
         Description = description;
         ErrorType = errorType;
+        Exception = exception;
     }
 
     /// <summary>
@@ -97,13 +112,19 @@ public class Error
     public ErrorType ErrorType { get; }
 
     /// <summary>
+    ///     Gets the exception associated with the error, if any.
+    /// </summary>
+    public Exception? Exception { get; }
+
+    /// <summary>
     ///     Creates a new <see cref="Error" /> instance.
     /// </summary>
     /// <param name="description">The description of the error.</param>
     /// <param name="errorType">The type of the error.</param>
+    /// <param name="exception">The exception associated with the error, if any.</param>
     /// <returns>A new <see cref="Error" /> instance.</returns>
-    public static Error Create(string description, ErrorType errorType)
+    public static Error Create(string description, ErrorType errorType, Exception? exception = null)
     {
-        return new Error(description, errorType);
+        return new Error(description, errorType, exception);
     }
 }
