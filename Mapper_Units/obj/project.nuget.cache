@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ydp1JiM/Zjk=",
+  "dgSpecHash": "qrOa24Zc6tM=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\Self-Library\\Mapper_Units\\Mapper.Units.csproj",
+  "projectFilePath": "C:\\Projects\\Self-Library\\Mapper\\Mapper_Units\\Mapper.Units.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TanerGadomski\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
     "C:\\Users\\TanerGadomski\\.nuget\\packages\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Sharp-Mapper.csproj",
+      "projectUniqueName": "C:\\Projects\\Self-Library\\Mapper\\Sharp-Mapper\\Sharp-Mapper.csproj",
       "projectName": "Sharp-Mapper",
-      "projectPath": "C:\\Projects\\Self-Library\\Sharp-Mapper\\Sharp-Mapper.csproj",
+      "projectPath": "C:\\Projects\\Self-Library\\Mapper\\Sharp-Mapper\\Sharp-Mapper.csproj",
       "packagesPath": "C:\\Users\\TanerGadomski\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Self-Library\\Sharp-Mapper\\obj\\",
+      "outputPath": "C:\\Projects\\Self-Library\\Mapper\\Sharp-Mapper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
