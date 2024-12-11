@@ -8,8 +8,8 @@ namespace Sharp_Mapper.Interface;
 /// </summary>
 public interface IDataTransformer
 {
-    string PropertyName1 { get; set; }
-    string PropertyName2 { get; set; }
+    string PropertyName1 { get; }
+    string PropertyName2 { get; }
 
     /// <summary>
     ///     Combines the current object with the specified source object.

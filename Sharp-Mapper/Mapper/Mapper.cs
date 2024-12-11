@@ -63,8 +63,7 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
                 var value = destProp.GetValue(sourceObject);
 
                 var setValueResponse = MapperHelper.TrySetValue(destProp, sourceProp, value, sourceObject, destionationObject,IgnoreNullValues);
-                if (!setValueResponse.IsSuccess)
-                    return setValueResponse.Error!;
+                if (!setValueResponse.IsSuccess) return setValueResponse.Error!;
             }
         }
 

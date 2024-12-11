@@ -82,10 +82,7 @@ public class MapperHelper<TDestination, TSource>
     {
         try
         {
-            if (!ignoreNullValues)
-            {
-                return ErrorType.NullProperty;
-            }
+            if (!ignoreNullValues) return ErrorType.NullProperty;
 
             property.SetValue(destinationObject, sourceValue);
             return ErrorType.Success;

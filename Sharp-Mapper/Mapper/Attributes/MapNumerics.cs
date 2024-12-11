@@ -10,8 +10,8 @@ namespace Sharp_Mapper.Mapper.Attributes;
 [AttributeUsage(AttributeTargets.Property)]
 public class MapNumerics(string value1, string value2) : Attribute, IDataTransformer
 {
-    public string PropertyName1 { get; set; } = value1;
-    public string PropertyName2 { get; set; } = value2;
+    public string PropertyName1 { get; } = value1;
+    public string PropertyName2 { get; } = value2;
 
     /// <summary>
     ///     Combines the values of the specified properties from the source object.
