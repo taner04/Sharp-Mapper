@@ -4,13 +4,15 @@ Sharp-Mapper is a C# library designed to facilitate the mapping, mapback, and up
 
 ## Features
 
-- **Mapping**: Convert objects from one type to another. Like an entitie to and dto class
-- **MapBack**: Works the same as Mapping in but from dto to entie.
-- **Update Entities**: Update dto/ entitie object with the source object.
+- **Mapping**: Convert objects from one type to another.
+- **Mapback**: Reverse mapping from the target object back to the source object.
+- **Update Entities**: Update existing entities with new data.
 
-## Installation
+## Use cases
 
-To install Sharp-Mapper, you can use the following command:
-
-```sh
-dotnet add package Sharp-Mapper
+- Data Transfer Objects (DTOs): Map database entities to DTOs for data transfer across different layers of the application, such as from the service layer to the presentation layer.
+- API Models: Convert API request models to domain models and vice versa.
+- View Models: Map domain models to view models used in MVC or MVVM architectures.
+- Configuration Mapping: Map configuration settings from external files (e.g., JSON, XML) to strongly typed configuration classes.
+- Data Import/Export: Facilitate the mapping of data between different formats during import and export operations.
+- Testing: Use mapping to create mock objects for unit testing by converting real objects to test-friendly formats.
