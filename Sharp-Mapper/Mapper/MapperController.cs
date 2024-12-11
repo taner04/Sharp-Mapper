@@ -3,21 +3,37 @@ using System.Reflection;
 
 namespace Sharp_Mapper.Mapper;
 
+/// <summary>
+///     Abstract base class for mapping properties between source and destination objects.
+/// </summary>
+/// <typeparam name="TDestination">The type of the destination object.</typeparam>
+/// <typeparam name="TSource">The type of the source object.</typeparam>
 public abstract class MapperController<TDestination, TSource>(bool ignoreAttributes, bool ignoreNullValues)
 {
     #region Protected Properties
 
-    // Cache destination properties by name for quick lookup
+    /// <summary>
+    ///     Cache destination properties by name for quick lookup.
+    /// </summary>
     protected static readonly Dictionary<string, PropertyInfo> DestinationProperties = typeof(TDestination)
         .GetProperties()
         .ToDictionary(p => p.Name, p => p);
 
+    /// <summary>
+    ///     Cache source properties by name for quick lookup.
+    /// </summary>
     protected static readonly Dictionary<string, PropertyInfo> SourceProperties = typeof(TSource)
         .GetProperties()
         .ToDictionary(p => p.Name, p => p);
 
-    // Cache source properties
+    /// <summary>
+    ///     Cache destination properties.
+    /// </summary>
     protected static readonly PropertyInfo[] DestinationPropertyInfos = typeof(TDestination).GetProperties();
+
+    /// <summary>
+    ///     Cache source properties.
+    /// </summary>
     protected static readonly PropertyInfo[] SourcePropertiesInfo = typeof(TSource).GetProperties();
 
     #endregion
@@ -60,8 +76,19 @@ public abstract class MapperController<TDestination, TSource>(bool ignoreAttribu
 
     #region Pub Properties
 
+    /// <summary>
+    ///     Gets or sets a value indicating whether to ignore null values during mapping.
+    /// </summary>
     protected bool IgnoreNullValues { get; set; } = ignoreNullValues;
+
+    /// <summary>
+    ///     Gets or sets a value indicating whether to ignore attributes during mapping.
+    /// </summary>
     protected bool IgnoreAttributes { get; set; } = ignoreAttributes;
+
+    /// <summary>
+    ///     Helper for mapping properties between source and destination objects.
+    /// </summary>
     protected static readonly MapperHelper<TDestination, TSource> MapperHelper = new();
 
     #endregion

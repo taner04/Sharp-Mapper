@@ -10,7 +10,7 @@ namespace Sharp_Mapper.Mapper;
 /// <typeparam name="TDestination">The type of the destination object.</typeparam>
 /// <typeparam name="TSource">The type of the source object.</typeparam>
 /// <param name="ignoreAttributes">Indicates whether to ignore attributes during mapping.</param>
-/// <param name="ignoreNullValues">Indicates whether to fill null values during mapping.</param>
+/// <param name="ignoreNullValues">Indicates whether to fill null values with default during mapping.</param>
 public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes = true, bool ignoreNullValues = true)
     : MapperController<TDestination, TSource>(ignoreAttributes, ignoreNullValues), IMapper<TDestination, TSource>
 {
@@ -27,20 +27,20 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
         {
             SourceProperties.TryGetValue(destinationProperty.Name, out var sourceProperty);
             var value = sourceProperty?.GetValue(sourceObject);
-            
+
             var propertyAtr = destinationProperty.GetCustomAttributes().ToList();
 
-            if(MapperHelper.ContainsCombineAttribute(propertyAtr, out var dateTransformer))
+            if (MapperHelper.ContainsCombineAttribute(propertyAtr, out var dateTransformer))
             {
                 var combinerResponse = dateTransformer.Combine(SourcePropertiesInfo, sourceObject, out var combinerValue);
                 if (combinerResponse != ErrorType.Success)
-                { 
+                {
                     return ResultT<TDestination>.Failure(MapperHelper.CreateError(sourceProperty, destinationProperty, combinerResponse));
                 }
                 value = combinerValue;
             }
 
-            if(MapperHelper.ContainsValidationAttribute(propertyAtr, out var validator) && !validator.IsValid(value))
+            if (MapperHelper.ContainsValidationAttribute(propertyAtr, out var validator) && !validator.IsValid(value))
             {
                 return ResultT<TDestination>.Failure(MapperHelper.CreateError(sourceProperty, destinationProperty, ErrorType.RequieredProperty));
             }
@@ -52,13 +52,18 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
         return ResultT<TDestination>.Success(destionationObject);
     }
 
+    /// <summary>
+    ///     Maps properties from the destination object back to a new instance of the source object.
+    /// </summary>
+    /// <param name="sourceObject">The destination object.</param>
+    /// <returns>A result containing the mapped source object or an error.</returns>
     public ResultT<TSource> MapBack(TDestination sourceObject)
     {
         var destionationObject = Activator.CreateInstance<TSource>();
 
         foreach (var sourceProp in SourcePropertiesInfo)
         {
-            if(DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
+            if (DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
             {
                 var value = destProp.GetValue(sourceObject);
 

@@ -38,6 +38,7 @@ public class Result
     ///     Implicitly converts an <see cref="Error" /> to a <see cref="Result" /> indicating failure.
     /// </summary>
     /// <param name="error">The error to convert.</param>
+    /// <returns>A <see cref="Result" /> indicating failure.</returns>
     public static implicit operator Result(Error error)
     {
         return new Result(error);

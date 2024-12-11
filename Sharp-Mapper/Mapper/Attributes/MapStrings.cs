@@ -16,10 +16,11 @@ public class MapStrings(string value1, string value2) : Attribute, IDataTransfor
     /// <summary>
     ///     Combines the values of the specified properties from the source object.
     /// </summary>
+    /// <typeparam name="TDestination">The type of the destination object.</typeparam>
     /// <param name="source">The source object containing the properties to combine.</param>
-    /// <param name="mappableObject"></param>
-    /// <param name="value"></param>
-    /// <returns>A string that is the combination of the two property values, separated by a space.</returns>
+    /// <param name="mappableObject">The object to map the combined values to.</param>
+    /// <param name="value">The combined value of the specified properties.</param>
+    /// <returns>An <see cref="ErrorType"/> indicating the result of the combination.</returns>
     public ErrorType Combine<TDestination>(PropertyInfo[] source, TDestination mappableObject, out object value)
     {
         var combinerValues = new object[2];

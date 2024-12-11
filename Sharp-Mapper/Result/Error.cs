@@ -1,3 +1,4 @@
+using Sharp_Mapper.Helper;
 using System.ComponentModel;
 
 namespace Sharp_Mapper.Result;
@@ -23,7 +24,11 @@ public enum ErrorType
     [Description("Source propertys doesnt match")]
     MatchingProperty,
 
-    SetProperty,
+    /// <summary>
+    ///     Indicates that a destination property was set.
+    /// </summary>
+    [Description("Destination property was set")]
+    PropertySet,
 
     /// <summary>
     ///     Indicates that a required source property was empty.
@@ -38,14 +43,20 @@ public enum ErrorType
     NotMappableProperty,
 
     /// <summary>
-    ///     Indicates that if a property is null.
+    ///     Indicates that a property is null.
     /// </summary>
-    [Description("Property was null")] 
+    [Description("Property was null")]
     NullProperty,
 
+    /// <summary>
+    ///     Indicates that a property for combining was empty.
+    /// </summary>
     [Description("Property for combining was empty")]
     CombinePropEmpty,
 
+    /// <summary>
+    ///     Indicates that properties couldn't be combined.
+    /// </summary>
     [Description("Couldn't combine properties")]
     CombineError
 }
@@ -65,7 +76,7 @@ public class Error
         ErrorType errorType
     )
     {
-        Type = ErrorExtension.GetHeader(errorType);
+        Type = ErrorHelper.GetHeader(errorType);
         Description = description;
         ErrorType = errorType;
     }

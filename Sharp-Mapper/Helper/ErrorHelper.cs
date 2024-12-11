@@ -1,13 +1,14 @@
+using Sharp_Mapper.Result;
 using System.ComponentModel;
 using System.Reflection;
 using System.Text;
 
-namespace Sharp_Mapper.Result;
+namespace Sharp_Mapper.Helper;
 
 /// <summary>
 ///     Provides extension methods for handling errors.
 /// </summary>
-public static class ErrorExtension
+public static class ErrorHelper
 {
     /// <summary>
     ///     Gets the header description of the specified error type.
@@ -30,8 +31,7 @@ public static class ErrorExtension
     /// <returns>A string describing the error.</returns>
     public static string GetDescription(PropertyInfo? sourceProp, PropertyInfo destinProp, ErrorType errorType)
     {
-        if (errorType == ErrorType.Unknown)
-            return "Unknown Error";
+        if (errorType == ErrorType.Unknown) return "Unknown Error";
 
         var sb = new StringBuilder();
         sb.Append($"Couldn't map from prop. {sourceProp?.Name} ({GetPropertyText(sourceProp)}) to ");
@@ -49,8 +49,6 @@ public static class ErrorExtension
         var propertyClassName = propertyInfo?.DeclaringType?.Name ?? "Unknown class";
         var propertyPropertyType = propertyInfo?.PropertyType;
         var propertyTypeName = propertyPropertyType?.Name ?? "Unknown type";
-        //var isNullable = Nullable.GetUnderlyingType(propertyPropertyType) != null;
-        //return $"{propertyClassName}, {propertyTypeName}{(isNullable ? " (nullable)" : "")}";
         return $"{propertyClassName}, {propertyTypeName}";
     }
 }
