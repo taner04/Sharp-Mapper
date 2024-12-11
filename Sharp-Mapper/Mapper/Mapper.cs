@@ -15,6 +15,11 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
     : MapperController<TDestination, TSource>(ignoreAttributes, ignoreNullValues), IMapper<TDestination, TSource>
 {
     /// <summary>
+    ///     Gets a value indicating whether the mapper has been disposed.
+    /// </summary>
+    public bool IsDisposed => _isDisposed;
+
+    /// <summary>
     ///     Maps properties from the source object to a new instance of the destination object.
     /// </summary>
     /// <param name="sourceObject">The source object.</param>
@@ -67,11 +72,17 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
             {
                 var value = destProp.GetValue(sourceObject);
 
-                var setValueResponse = MapperHelper.TrySetValue(destProp, sourceProp, value, sourceObject, destionationObject,IgnoreNullValues);
+                var setValueResponse = MapperHelper.TrySetValue(destProp, sourceProp, value, sourceObject, destionationObject, IgnoreNullValues);
                 if (!setValueResponse.IsSuccess) return setValueResponse.Error!;
             }
         }
 
         return ResultT<TSource>.Success(destionationObject);
     }
+
+    /// <summary>
+    ///     Disposes the mapper, releasing any resources it holds.
+    /// </summary>
+    /// <param name="disposing">Indicates whether the method is called from Dispose.</param>
+    public override void Dispose(bool disposing = true) => base.Dispose(disposing);
 }

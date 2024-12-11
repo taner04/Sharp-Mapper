@@ -49,8 +49,7 @@ public class MapperHelper<TDestination, TSource>
         {
             foreach (var attribute in attributes)
             {
-                if (attribute.GetType() != typeof(MapperRequieredProperty))
-                    continue;
+                if (attribute.GetType() != typeof(MapperRequieredProperty)) continue;
 
                 validator = (IValidator)attribute;
                 validator.ErrorType = ErrorType.RequieredProperty;
@@ -127,6 +126,7 @@ public class MapperHelper<TDestination, TSource>
             mapperInternalResponse.ErrorType = ex is InvalidCastException
                 ? ErrorType.TypeMismatch
                 : ErrorType.InvalidAssignment;
+
             mapperInternalResponse.Exception = ex;
         }
         catch (Exception ex)

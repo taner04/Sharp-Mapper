@@ -5,7 +5,6 @@ namespace Mapper.Units.Mapper.Tests
 {
     public class Map
     {
-        #region Map back and forward
         [Fact]
         public void MapperMap_EmployeeToEmployeeDto_Sucess()
         {
@@ -30,9 +29,6 @@ namespace Mapper.Units.Mapper.Tests
             Assert.Equal(employeeDto.Id, mapperResponse.Value.Id);
         }
 
-        #endregion
-
-        #region Update back and forward
         [Fact]
         public void MapperUpdate_EmployeeDto_Sucess()
         {
@@ -60,6 +56,17 @@ namespace Mapper.Units.Mapper.Tests
             // Assert
             Assert.Equal(employee.Firstname, employeeDto.Firstname);
         }
-        #endregion
+
+        [Fact]
+        public void Mapper_Dispose_Sucess()
+        {
+            // Arrange
+            var employee = Employee.GetTestObject();
+            var mapper = new Mapper<EmployeeDto,Employee>();
+            // Act
+            mapper.Dispose();
+            // Assert
+            Assert.True(mapper.IsDisposed);
+        }
     }
 }
