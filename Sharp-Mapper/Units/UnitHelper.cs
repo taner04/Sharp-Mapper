@@ -18,6 +18,6 @@ internal static class UnitHelper
     {
         Console.WriteLine("Error: Mapping error");
         Console.WriteLine($"Header {mapperResponse.Error?.Type ?? "Unknown header"}");
-        Console.WriteLine($"Description {mapperResponse.Error?.Description ?? "Unknown descr."}");
+        Console.WriteLine($"Description: {mapperResponse.Error?.Description ?? "Unknown descr."}");
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mapper.Units")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8016c5ac4626b8ac3ce30950d7b1b1de0649e741")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0f4457e67e68e47087de9b25ce8564fc592b286")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mapper.Units")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mapper.Units")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

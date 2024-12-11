@@ -12,16 +12,16 @@ public interface IMapper<TDestination, TSource>
     /// <summary>
     ///     Maps an instance of <typeparamref name="TSource" /> to <typeparamref name="TDestination" />.
     /// </summary>
-    /// <param name="source">The source instance to map from.</param>
+    /// <param name="sourceObject">The sourceObject instance to map from.</param>
     /// <returns>A <see cref="ResultT{TDestination}" /> containing the mapped instance or an error.</returns>
-    ResultT<TDestination> Map(TSource source);
+    ResultT<TDestination> Map(TSource sourceObject);
 
     /// <summary>
     ///     Maps an instance of <typeparamref name="TDestination" /> back to <typeparamref name="TSource" />.
     /// </summary>
-    /// <param name="destination">The destination instance to map from.</param>
+    /// <param name="sourceObject">The sourceObject instance to map from.</param>
     /// <returns>A <see cref="ResultT{TSource}" /> containing the mapped instance or an error.</returns>
-    ResultT<TSource> MapBack(TDestination destination);
+    ResultT<TSource> MapBack(TDestination sourceObject);
 
     /// <summary>
     ///     Updates an instance of <typeparamref name="TSource" /> with values from <typeparamref name="TDestination" />.

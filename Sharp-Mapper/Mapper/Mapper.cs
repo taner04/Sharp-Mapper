@@ -14,88 +14,60 @@ namespace Sharp_Mapper.Mapper;
 public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes = true, bool ignoreNullValues = true)
     : MapperController<TDestination, TSource>(ignoreAttributes, ignoreNullValues), IMapper<TDestination, TSource>
 {
-    private ErrorType _error;
-
     /// <summary>
     ///     Maps properties from the source object to a new instance of the destination object.
     /// </summary>
-    /// <param name="mappableObject">The source object.</param>
+    /// <param name="sourceObject">The source object.</param>
     /// <returns>A result containing the mapped destination object or an error.</returns>
-    public ResultT<TDestination> Map(TSource mappableObject)
+    public ResultT<TDestination> Map(TSource sourceObject)
     {
         var destionationObject = Activator.CreateInstance<TDestination>();
 
         foreach (var destinationProperty in DestinationPropertyInfos)
         {
             SourceProperties.TryGetValue(destinationProperty.Name, out var sourceProperty);
-            var value = sourceProperty?.GetValue(mappableObject);
+            var value = sourceProperty?.GetValue(sourceObject);
             
             var propertyAtr = destinationProperty.GetCustomAttributes().ToList();
 
             if(MapperHelper.ContainsCombineAttribute(propertyAtr, out var dateTransformer))
             {
-                var combinerResponse = dateTransformer.Combine(SourcePropertiesInfo, mappableObject, out var combinerValue);
+                var combinerResponse = dateTransformer.Combine(SourcePropertiesInfo, sourceObject, out var combinerValue);
                 if (combinerResponse != ErrorType.Success)
-                {
-                    var desc = ErrorExtension.GetDescription(sourceProperty, destinationProperty, combinerResponse);
-                    return ResultT<TDestination>.Failure(Error.Create(desc, combinerResponse));
+                { 
+                    return ResultT<TDestination>.Failure(MapperHelper.CreateError(sourceProperty, destinationProperty, combinerResponse));
                 }
                 value = combinerValue;
             }
 
             if(MapperHelper.ContainsValidationAttribute(propertyAtr, out var validator) && !validator.IsValid(value))
             {
-                var desc = ErrorExtension.GetDescription(sourceProperty, destinationProperty, validator.ErrorType);
-                return ResultT<TDestination>.Failure(Error.Create(desc, validator.ErrorType));
+                return ResultT<TDestination>.Failure(MapperHelper.CreateError(sourceProperty, destinationProperty, ErrorType.RequieredProperty));
             }
 
-            var setValueResponse = TrySetValue(sourceProperty, destinationProperty, value, mappableObject, destionationObject);
+            var setValueResponse = MapperHelper.TrySetValue(sourceProperty, destinationProperty, value, sourceObject, destionationObject, IgnoreNullValues);
             if (!setValueResponse.IsSuccess) return setValueResponse.Error!;
         }
 
         return ResultT<TDestination>.Success(destionationObject);
     }
 
-    public ResultT<TSource> MapBack(TDestination mappableObject)
+    public ResultT<TSource> MapBack(TDestination sourceObject)
     {
         var destionationObject = Activator.CreateInstance<TSource>();
 
         foreach (var sourceProp in SourcePropertiesInfo)
         {
-            if (DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
+            if(DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
             {
-                var error = SetPropertyValue(sourceProp, destProp.GetValue(mappableObject), destionationObject);
-                if (error != ErrorType.Success)
-                {
-                    return ResultT<TSource>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProp, sourceProp, error), error));
-                }
+                var value = destProp.GetValue(sourceObject);
+
+                var setValueResponse = MapperHelper.TrySetValue(destProp, sourceProp, value, sourceObject, destionationObject,IgnoreNullValues);
+                if (!setValueResponse.IsSuccess)
+                    return setValueResponse.Error!;
             }
         }
 
         return ResultT<TSource>.Success(destionationObject);
-    }
-
-    private ResultT<TDestination> TrySetValue(PropertyInfo? sourceProperty, PropertyInfo destinationProperty, object? value, TSource sourceObject, TDestination destinationObject)
-    {
-        _error = SetPropertyValue(destinationProperty, value, destinationObject);
-        
-        return _error != ErrorType.Success ? 
-            ResultT<TDestination>.Failure(Error.Create(ErrorExtension.GetDescription(sourceProperty, destinationProperty, _error), _error)) : 
-            ResultT<TDestination>.Success(destinationObject);
-    }
-
-    private ErrorType SetPropertyValue<T>(PropertyInfo property, object? sourceValue, T destinationObject)
-    {
-        try
-        {
-            if (!IgnoreNullValues) return ErrorType.NullProperty;
-
-            property.SetValue(destinationObject, sourceValue);
-            return ErrorType.Success;
-        }
-        catch (Exception)
-        {
-            return ErrorType.Unknown;
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Sharp_Mapper.Result;
+using System.Reflection;
 
 namespace Sharp_Mapper.Mapper;
 
@@ -9,60 +10,31 @@ public sealed partial class Mapper<TDestination, TSource>
         switch (destination)
         {
             case TDestination:
-                {
-                    UpdateDestination(source, ref destination);
-                    break;
-                }
-            case TSource:
-                {
-                    UpdateSource(source, ref destination);
-                    break;
-                }
-        }
-    }
-
-    private void UpdateSource<T>(object source, ref T destination)
-    {
-        foreach (var sourceProp in SourcePropertiesInfo)
-        {
-            if (DestinationProperties.TryGetValue(sourceProp.Name, out var destProp))
             {
-                var type = source?.GetType().GetProperty(destProp.Name);
-                var value = type?.GetValue(source);
-
-                if (value == null)
-                {
-                    continue;
-                }
-
-                var error = SetPropertyValue(sourceProp, value, destination);
-                if (error != ErrorType.Success)
-                {
-                    throw new Exception(ErrorExtension.GetDescription(sourceProp, destProp, error));
-                }
+                UpdateProperties(source, ref destination, SourceProperties, DestinationPropertyInfos);
+                break;
+            }
+            case TSource:
+            {
+                UpdateProperties(source, ref destination, DestinationProperties, SourcePropertiesInfo);
+                break;
             }
         }
     }
 
-    private void UpdateDestination<T>(object source, ref T destination)
+    private void UpdateProperties<T>(object source, ref T destinationObject, Dictionary<string, PropertyInfo> sourceProperties, PropertyInfo[] destinationProperties)
     {
-        foreach (var destinProp in DestinationPropertyInfos)
+        foreach (var destinationProperty in destinationProperties)
         {
-            if (SourceProperties.TryGetValue(destinProp.Name, out var soureProp))
+            if (!sourceProperties.TryGetValue(destinationProperty.Name, out var sourceProp)) continue;
+            
+            var sourceValue = source?.GetType().GetProperty(sourceProp.Name)?.GetValue(source);
+            if (sourceValue == null) continue;
+
+            var error = MapperHelper.SetPropertyValue(destinationProperty, sourceValue, destinationObject, IgnoreNullValues);
+            if (error != ErrorType.Success)
             {
-                var type = source?.GetType().GetProperty(soureProp.Name);
-                var value = type?.GetValue(source);
-
-                if (value == null)
-                {
-                    continue;
-                }
-
-                var error = SetPropertyValue(destinProp, value, destination);
-                if (error != ErrorType.Success)
-                {
-                    throw new Exception(ErrorExtension.GetDescription(destinProp, soureProp, error));
-                }
+                throw new Exception(ErrorExtension.GetDescription(sourceProp, destinationProperty, error));
             }
         }
     }
