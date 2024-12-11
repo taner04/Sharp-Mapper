@@ -1,5 +1,4 @@
-﻿using Sharp_Mapper.Helper;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Sharp_Mapper.Mapper;
 
@@ -125,11 +124,6 @@ public abstract class MapperController<TDestination, TSource>(bool ignoreAttribu
     ///     Gets or sets a value indicating whether to ignore attributes during mapping.
     /// </summary>
     protected bool IgnoreAttributes { get; set; } = ignoreAttributes;
-
-    /// <summary>
-    ///     Helper for mapping properties between source and destination objects.
-    /// </summary>
-    protected static readonly MapperHelper<TDestination, TSource> MapperHelper = new();
 
     #endregion
 }

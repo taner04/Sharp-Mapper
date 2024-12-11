@@ -19,8 +19,5 @@ public class MapperRequieredProperty : Attribute, IValidator
     /// </summary>
     /// <param name="source">The source object to validate.</param>
     /// <returns><c>true</c> if the source object is not null; otherwise, <c>false</c>.</returns>
-    public bool IsValid(object? source)
-    {
-        return source != null;
-    }
+    public bool IsValid(object? source) => source != null;
 }

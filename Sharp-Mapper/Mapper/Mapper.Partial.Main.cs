@@ -35,22 +35,22 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
 
             var propertyAtr = destinationProperty.GetCustomAttributes().ToList();
 
-            if (MapperHelper.ContainsCombineAttribute(propertyAtr, out var dateTransformer))
+            if (ContainsCombineAttribute(propertyAtr, out var dateTransformer))
             {
                 var combinerResponse = dateTransformer.Combine(SourcePropertiesInfo, sourceObject, out var combinerValue);
                 if (combinerResponse != ErrorType.Success)
                 {
-                    return ResultT<TDestination>.Failure(MapperHelper.CreateError(sourceProperty, destinationProperty, combinerResponse));
+                    return ResultT<TDestination>.Failure(CreateError(sourceProperty, destinationProperty, combinerResponse));
                 }
                 value = combinerValue;
             }
 
-            if (MapperHelper.ContainsValidationAttribute(propertyAtr, out var validator) && !validator.IsValid(value))
+            if (ContainsValidationAttribute(propertyAtr, out var validator) && !validator.IsValid(value))
             {
-                return ResultT<TDestination>.Failure(MapperHelper.CreateError(sourceProperty, destinationProperty, ErrorType.RequieredProperty));
+                return ResultT<TDestination>.Failure(CreateError(sourceProperty, destinationProperty, ErrorType.RequieredProperty));
             }
 
-            var setValueResponse = MapperHelper.TrySetValue(sourceProperty, destinationProperty, value, sourceObject, destionationObject, IgnoreNullValues);
+            var setValueResponse = TrySetValue(sourceProperty, destinationProperty, value, sourceObject, destionationObject, IgnoreNullValues);
             if (!setValueResponse.IsSuccess) return setValueResponse.Error!;
         }
 
@@ -72,7 +72,7 @@ public sealed partial class Mapper<TDestination, TSource>(bool ignoreAttributes 
             {
                 var value = destProp.GetValue(sourceObject);
 
-                var setValueResponse = MapperHelper.TrySetValue(destProp, sourceProp, value, sourceObject, destionationObject, IgnoreNullValues);
+                var setValueResponse = TrySetValue(destProp, sourceProp, value, sourceObject, destionationObject, IgnoreNullValues);
                 if (!setValueResponse.IsSuccess) return setValueResponse.Error!;
             }
         }

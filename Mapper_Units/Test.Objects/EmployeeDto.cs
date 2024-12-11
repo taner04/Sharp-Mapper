@@ -1,8 +1,11 @@
-﻿namespace Mapper_Units.Test_Objects
+﻿using Sharp_Mapper.Mapper.Attributes;
+
+namespace Mapper_Units.Test_Objects
 {
     internal class EmployeeDto
     {
         public int Id { get; set; }
+        [MapperRequieredProperty]
         public string Firstname { get; set; }
         public string Lastname { get; set; }
 

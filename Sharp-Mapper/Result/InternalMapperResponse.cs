@@ -1,6 +1,4 @@
-﻿using Sharp_Mapper.Result;
-
-namespace Sharp_Mapper.Mapper
+﻿namespace Sharp_Mapper.Result
 {
     /// <summary>
     /// Represents the response from an internal mapping operation.

@@ -1,5 +1,6 @@
 ﻿using Mapper_Units.Test_Objects;
 using Sharp_Mapper.Mapper;
+using Sharp_Mapper.Result;
 
 namespace Mapper.Units.Mapper.Tests
 {
@@ -55,6 +56,33 @@ namespace Mapper.Units.Mapper.Tests
             mapper.Update(employee, ref employeeDto);
             // Assert
             Assert.Equal(employee.Firstname, employeeDto.Firstname);
+        }
+
+        [Fact]
+        public void MapperMap_MapRequieredProperty_Success()
+        {
+            // Arrange
+            var employee = Employee.GetTestObject();
+
+            var mapper = new Mapper<EmployeeDto,Employee>();
+            // Act
+            var mapperResponse = mapper.Map(employee);
+            // Assert
+            Assert.Equal(employee.Id, mapperResponse.Value.Id);
+        }
+
+        [Fact]
+        public void MapperMap_MapRequieredProperty_Failure()
+        {
+            // Arrange
+            var employee = Employee.GetTestObject();
+            employee.Firstname = null;
+
+            var mapper = new Mapper<EmployeeDto,Employee>();
+            // Act
+            var mapperResponse = mapper.Map(employee);
+            // Assert
+            Assert.Equal(ErrorType.RequieredProperty, mapperResponse.Error.ErrorType);
         }
 
         [Fact]

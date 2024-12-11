@@ -54,7 +54,7 @@ public sealed partial class Mapper<TDestination, TSource>
             if (sourceValue == null)
                 continue;
 
-            var error = MapperHelper.SetPropertyValue(destinationProperty, sourceValue, destinationObject, IgnoreNullValues);
+            var error = SetPropertyValue(destinationProperty, sourceValue, destinationObject, IgnoreNullValues);
             if (error.ErrorType != ErrorType.Success)
             {
                 throw new Exception(ErrorHelper.GetDescription(sourceProp, destinationProperty, error.ErrorType), error.Exception);
