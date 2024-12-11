@@ -15,4 +15,6 @@ public class EmployeeDto
             Lastname = "Müller"
         };
     }
+
+    public override string ToString() => $"Id: {Id}, Firstname: {Firstname}, Lastname: {Lastname}";
 }
