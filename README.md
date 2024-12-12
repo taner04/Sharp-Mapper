@@ -44,3 +44,19 @@ var employeeDto = resultSourceToTarget.Value;
 
 // Example output
 Console.WriteLine($"Mapped Employee DTO: {employeeDto.Name}");
+```
+
+### Example 2: Update 
+To update from the target back to the source, simply call the same method. The first parameter is the source object, and the second is the target object which gets updated using the `ref` keyword.
+
+```csharp
+// Define test data
+var employee = Employee.GetTestObject();
+var employeeDto = EmployeeDto.GetTestObject();
+
+// Create a mapper instance
+var mapper = new Mapper<EmployeeDto, Employee>();
+
+// Update the source object with data from the target object
+mapper.Update(employeeDto, ref employee);
+```
