@@ -1,4 +1,5 @@
-﻿using Sharp_Mapper.Interface;
+﻿using Sharp_Mapper.Helper;
+using Sharp_Mapper.Interface;
 using Sharp_Mapper.Result;
 using System.Reflection;
 
@@ -21,23 +22,11 @@ public class MapStrings(string value1, string value2) : Attribute, IDataTransfor
     /// <param name="mappableObject">The object to map the combined values to.</param>
     /// <param name="value">The combined value of the specified properties.</param>
     /// <returns>An <see cref="ErrorType"/> indicating the result of the combination.</returns>
-    public ErrorType Combine<TDestination>(PropertyInfo[] source, TDestination mappableObject, out object value)
+    public ErrorType Combine<TDestination>(PropertyInfo[] source, TDestination mappableObject, out object? value)
     {
-        var combinerValues = new object[2];
+        var combinerValues = DataTransformerHelper.GetValues(source, mappableObject, this);
 
-        foreach (var sourceProperty in source)
-        {
-            if (sourceProperty.Name == PropertyName1)
-            {
-                combinerValues[0] = sourceProperty.GetValue(mappableObject)!;
-            }
-            if (sourceProperty.Name == PropertyName2)
-            {
-                combinerValues[1] = sourceProperty.GetValue(mappableObject)!;
-            }
-        }
-
-        if ((source[0].Equals(null) || source[1].Equals(null)))
+        if (source[0].Equals(null) || source[1].Equals(null))
         {
             value = null;
             return default!;

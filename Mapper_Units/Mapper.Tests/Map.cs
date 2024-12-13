@@ -7,7 +7,7 @@ namespace Mapper.Units.Mapper.Tests
     public class Map
     {
         [Fact]
-        public void MapperMap_EmployeeToEmployeeDto_Sucess()
+        public void MapperMap_EmployeeToEmployeeDto_Success()
         {
             // Arrange
             var employee = Employee.GetTestObject();
@@ -19,7 +19,7 @@ namespace Mapper.Units.Mapper.Tests
         }
 
         [Fact]
-        public void MapperMapBack_EmployeeDtoToEmployee_Sucess()
+        public void MapperMapBack_EmployeeDtoToEmployee_Success()
         {
             // Arrange
             var employeeDto = EmployeeDto.GetTestObject();
@@ -31,7 +31,7 @@ namespace Mapper.Units.Mapper.Tests
         }
 
         [Fact]
-        public void MapperUpdate_EmployeeDto_Sucess()
+        public void MapperUpdate_EmployeeDto_Success()
         {
             // Arrange
             var employee = Employee.GetTestObject();
@@ -45,7 +45,7 @@ namespace Mapper.Units.Mapper.Tests
         }
 
         [Fact]
-        public void MapperUpdate_Employee_Sucess()
+        public void MapperUpdate_Employee_Success()
         {
             // Arrange
             var employee = Employee.GetTestObject();
@@ -59,7 +59,7 @@ namespace Mapper.Units.Mapper.Tests
         }
 
         [Fact]
-        public void MapperMap_MapRequieredProperty_Success()
+        public void MapperMap_MapRequiredProperty_Success()
         {
             // Arrange
             var employee = Employee.GetTestObject();
@@ -72,21 +72,21 @@ namespace Mapper.Units.Mapper.Tests
         }
 
         [Fact]
-        public void MapperMap_MapRequieredProperty_Failure()
+        public void MapperMap_MapRequiredProperty_Failure()
         {
             // Arrange
             var employee = Employee.GetTestObject();
-            employee.Firstname = null;
+            employee.Firstname = null!;
 
             var mapper = new Mapper<EmployeeDto,Employee>();
             // Act
             var mapperResponse = mapper.Map(employee);
             // Assert
-            Assert.Equal(ErrorType.RequieredProperty, mapperResponse.Error.ErrorType);
+            Assert.Equal(ErrorType.RequieredProperty, mapperResponse.Error?.ErrorType);
         }
 
         [Fact]
-        public void Mapper_Dispose_Sucess()
+        public void Mapper_Dispose_Success()
         {
             // Arrange
             var employee = Employee.GetTestObject();
